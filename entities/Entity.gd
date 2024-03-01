@@ -11,14 +11,14 @@ extends CharacterBody2D
 
 @export var invulnerable:bool = false
 
-@export_category("Other")
+@export_category("statistics")
 @export var movement_speed:int
 
+@export_category("Other")
 @export var faction:String
 
 
-
-func take_damage():
+func take_damage(damage):
 	pass
 	
 
@@ -26,12 +26,5 @@ func take_damage():
 func get_health() ->int:
 	return current_health
 
-
-func move(direction):
-	
-	velocity += direction * movement_speed
-	
-	move_and_slide()
-	
-
-
+func set_health(new_health):
+	current_health = new_health

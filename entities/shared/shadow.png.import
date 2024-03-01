@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3uha88kto405"
-path="res://.godot/imported/wangtileset.png-b9d2fe7d3b4eb3fa8336daa9eef02ab0.ctex"
+uid="uid://cummrm2rsacjw"
+path="res://.godot/imported/shadow.png-13f7dcd267ecc0deede202b28eb4bbe8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/wangtileset.png"
-dest_files=["res://.godot/imported/wangtileset.png-b9d2fe7d3b4eb3fa8336daa9eef02ab0.ctex"]
+source_file="res://entities/shared/shadow.png"
+dest_files=["res://.godot/imported/shadow.png-13f7dcd267ecc0deede202b28eb4bbe8.ctex"]
 
 [params]
 

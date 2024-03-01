@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://hbgtattk8upt"]
+[gd_scene load_steps=3 format=3 uid="uid://hbgtattk8upt"]
 
 [ext_resource type="PackedScene" uid="uid://cpmcxta1lrmst" path="res://tilesets/tile_map.tscn" id="1_addwt"]
+[ext_resource type="PackedScene" uid="uid://jw6wvouvwwfk" path="res://entities/player/player.tscn" id="1_ci8gl"]
 
 [node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_ci8gl")]
+z_index = 2
+position = Vector2(412, 174)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_speed = 5.1
 
 [node name="TileMap" parent="." instance=ExtResource("1_addwt")]
 position = Vector2(26, 602)

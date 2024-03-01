@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3uha88kto405"
-path="res://.godot/imported/wangtileset.png-b9d2fe7d3b4eb3fa8336daa9eef02ab0.ctex"
+uid="uid://br4j6hhtmx8o1"
+path="res://.godot/imported/abbcharanim.png-bbef109be6e1f49514ed39b7579f2b06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/wangtileset.png"
-dest_files=["res://.godot/imported/wangtileset.png-b9d2fe7d3b4eb3fa8336daa9eef02ab0.ctex"]
+source_file="res://entities/player/abbcharanim.png"
+dest_files=["res://.godot/imported/abbcharanim.png-bbef109be6e1f49514ed39b7579f2b06.ctex"]
 
 [params]
 
