@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://hbgtattk8upt"]
+
+[ext_resource type="PackedScene" uid="uid://cpmcxta1lrmst" path="res://tilesets/tile_map.tscn" id="1_addwt"]
+
+[node name="Main" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_addwt")]
+position = Vector2(26, 602)
