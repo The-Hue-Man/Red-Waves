@@ -7,6 +7,9 @@ var target_position: Vector2 = Vector2(0,0)
 var target_locked: bool = false
 
 func _ready():
+	#Calls the Entity class Ready function
+	super._ready()
+	
 	
 	faction = "enemy"
 

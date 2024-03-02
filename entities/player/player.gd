@@ -8,6 +8,10 @@ extends Entity
 
 
 func _ready():
+	#Calls the Entity class Ready function
+	super._ready()
+	
+	
 	faction = "player"
 	animated_sprite_2d.play("Idle")
 

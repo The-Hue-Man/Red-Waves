@@ -3,13 +3,15 @@
 [ext_resource type="Script" path="res://entities/enemies/enemy.gd" id="1_brmpq"]
 [ext_resource type="Texture2D" uid="uid://j7q61y8f7q2g" path="res://entities/enemies/slime.png" id="2_xkqla"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rpvjo"]
-radius = 8.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2g7bn"]
+radius = 5.0
+height = 18.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b133h"]
 radius = 103.019
 
 [node name="Enemy" type="CharacterBody2D" groups=["EnemyGroup"]]
+y_sort_enabled = true
 script = ExtResource("1_brmpq")
 movement_speed = 25
 
@@ -17,12 +19,14 @@ movement_speed = 25
 texture = ExtResource("2_xkqla")
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
-shape = SubResource("CircleShape2D_rpvjo")
+position = Vector2(0, 3)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_2g7bn")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="DetectionRange" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_b133h")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -4,7 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://cummrm2rsacjw" path="res://entities/shared/shadow.png" id="2_3xoyr"]
 [ext_resource type="Texture2D" uid="uid://br4j6hhtmx8o1" path="res://entities/player/abbcharanim.png" id="2_bejfm"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rmkqp"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j1ifq"]
+radius = 3.0
+height = 14.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0coxr"]
 atlas = ExtResource("2_bejfm")
@@ -67,18 +69,19 @@ animations = [{
 script = ExtResource("1_7x1ih")
 movement_speed = 105
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_j1ifq")
+
 [node name="Shadow" type="Sprite2D" parent="."]
-position = Vector2(0, 10)
 scale = Vector2(0.263885, 0.263885)
 texture = ExtResource("2_3xoyr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(0.879999, 0.879999)
-shape = SubResource("CircleShape2D_rmkqp")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_xe2re")
 animation = &"Idle"
 frame = 1
 frame_progress = 0.928287
+offset = Vector2(0, -9)

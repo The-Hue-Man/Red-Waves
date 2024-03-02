@@ -1,14 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://hbgtattk8upt"]
+[gd_scene load_steps=5 format=3 uid="uid://hbgtattk8upt"]
 
 [ext_resource type="PackedScene" uid="uid://cpmcxta1lrmst" path="res://tilesets/tile_map.tscn" id="1_addwt"]
 [ext_resource type="PackedScene" uid="uid://jw6wvouvwwfk" path="res://entities/player/player.tscn" id="1_ci8gl"]
 [ext_resource type="PackedScene" uid="uid://3ahcv24obb5n" path="res://entities/enemies/slime.tscn" id="3_k852e"]
+[ext_resource type="PackedScene" uid="uid://dveysy1ncdv5y" path="res://entities/entity_objects/tree/big_red_tree.tscn" id="4_3otkt"]
 
 [node name="Main" type="Node2D"]
+y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_ci8gl")]
-z_index = 2
-position = Vector2(412, 174)
+position = Vector2(421, 176)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 process_callback = 0
@@ -21,7 +22,9 @@ drag_right_margin = 0.05
 drag_bottom_margin = 0.05
 
 [node name="TileMap" parent="." instance=ExtResource("1_addwt")]
-position = Vector2(26, 602)
 
 [node name="Enemy" parent="." instance=ExtResource("3_k852e")]
 position = Vector2(507, 274)
+
+[node name="Tree" parent="." instance=ExtResource("4_3otkt")]
+position = Vector2(361, 138)

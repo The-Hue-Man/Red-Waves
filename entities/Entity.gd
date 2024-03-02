@@ -19,8 +19,8 @@ extends CharacterBody2D
 
 
 func _ready():
-	motion_mode = MOTION_MODE_FLOATING
-
+	set_motion_mode(MOTION_MODE_FLOATING)
+	
 
 
 func take_damage(damage):

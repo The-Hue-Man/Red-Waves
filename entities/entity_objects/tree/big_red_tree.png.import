@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccg0x1ycl2b5k"
-path="res://.godot/imported/Red.png-29861bb470cbf361854974a7568a1bef.ctex"
+uid="uid://7d8cq0i6sn4q"
+path="res://.godot/imported/big_red_tree.png-e906051b878e92d13f7cbcaa428f10d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/Red.png"
-dest_files=["res://.godot/imported/Red.png-29861bb470cbf361854974a7568a1bef.ctex"]
+source_file="res://entities/entity_objects/tree/big_red_tree.png"
+dest_files=["res://.godot/imported/big_red_tree.png-e906051b878e92d13f7cbcaa428f10d9.ctex"]
 
 [params]
 
