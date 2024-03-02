@@ -7,8 +7,6 @@ extends Entity
 
 
 
-
-
 func _ready():
 	faction = "player"
 	animated_sprite_2d.play("Idle")

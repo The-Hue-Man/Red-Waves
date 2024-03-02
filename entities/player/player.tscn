@@ -63,7 +63,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["PlayerGroup"]]
 script = ExtResource("1_7x1ih")
 movement_speed = 105
 

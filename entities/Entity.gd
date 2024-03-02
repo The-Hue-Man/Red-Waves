@@ -18,13 +18,20 @@ extends CharacterBody2D
 @export var faction:String
 
 
+func _ready():
+	motion_mode = MOTION_MODE_FLOATING
+
+
+
 func take_damage(damage):
 	pass
 	
-
 
 func get_health() ->int:
 	return current_health
 
 func set_health(new_health):
 	current_health = new_health
+
+func get_faction() ->String:
+	return faction

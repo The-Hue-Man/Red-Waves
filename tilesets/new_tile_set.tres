@@ -1,7 +1,8 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://cwm1f135v0vqx"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://cwm1f135v0vqx"]
 
 [ext_resource type="Texture2D" uid="uid://3uha88kto405" path="res://tilesets/wangtileset.png" id="1_qkr17"]
 [ext_resource type="Texture2D" uid="uid://ccg0x1ycl2b5k" path="res://tilesets/Red.png" id="2_kvdqa"]
+[ext_resource type="Texture2D" uid="uid://dlwt1y58l05yc" path="res://tilesets/Red-sheet.png" id="3_quy60"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m1om1"]
 texture = ExtResource("1_qkr17")
@@ -75,6 +76,18 @@ texture = ExtResource("2_kvdqa")
 0:0/0/terrain_set = 0
 0:0/0/terrain = 1
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2dga"]
+texture = ExtResource("3_quy60")
+0:0/animation_columns = 6
+0:0/animation_speed = 6.41
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/0 = 0
+
 [resource]
 terrain_set_0/mode = 1
 terrain_set_0/terrain_0/name = "Ground 0"
@@ -83,3 +96,4 @@ terrain_set_0/terrain_1/name = "Lake"
 terrain_set_0/terrain_1/color = Color(0.67451, 0.0862745, 0.780392, 1)
 sources/0 = SubResource("TileSetAtlasSource_m1om1")
 sources/1 = SubResource("TileSetAtlasSource_bfjdr")
+sources/2 = SubResource("TileSetAtlasSource_h2dga")
