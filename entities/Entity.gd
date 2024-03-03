@@ -23,15 +23,25 @@ func _ready():
 	
 
 
-func take_damage(damage):
+func take_damage(damage: int):
 	pass
 	
 
 func get_health() ->int:
 	return current_health
 
-func set_health(new_health):
+func set_health(new_health: int):
 	current_health = new_health
+
 
 func get_faction() ->String:
 	return faction
+
+func set_faction(new_faction: String):
+	faction = new_faction
+
+func get_invulnerability() -> bool:
+	return invulnerable
+
+func set_invulnerability(state: bool):
+	invulnerable = state

@@ -16,18 +16,16 @@ func _ready():
 	animated_sprite_2d.play("Idle")
 
 func _physics_process(delta):
-	movement(get_input())
+	movement(_get_move_input())
 	
 
 
-func get_input() -> Vector2:
+func _get_move_input() -> Vector2:
 	var vertical = Input.get_axis("up", "down")
 	var horizontal = Input.get_axis("left", "right")
 	
 	return Vector2(horizontal, vertical)
 	
-	
-
 
 func movement(direction):
 	velocity = Vector2(0,0)
@@ -40,5 +38,18 @@ func movement(direction):
 		animated_sprite_2d.flip_h = false
 	
 	move_and_slide()
+
+
+
+
+func _attack():
+	if Input.is_action_pressed("attack"):
+		pass
+	
+	
+	
+	
+	pass
+
 
 

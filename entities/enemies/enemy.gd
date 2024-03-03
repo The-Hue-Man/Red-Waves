@@ -6,10 +6,14 @@ var direction: Vector2 = Vector2(0,0)
 var target_position: Vector2 = Vector2(0,0)
 var target_locked: bool = false
 
+
+@onready var animated_sprite_2d = %AnimatedSprite2D
+
 func _ready():
 	#Calls the Entity class Ready function
 	super._ready()
 	
+	animated_sprite_2d.play()
 	
 	faction = "enemy"
 

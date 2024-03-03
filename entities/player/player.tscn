@@ -67,6 +67,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" groups=["PlayerGroup"]]
 script = ExtResource("1_7x1ih")
+max_health = 3
 movement_speed = 105
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -74,7 +75,8 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_j1ifq")
 
 [node name="Shadow" type="Sprite2D" parent="."]
-scale = Vector2(0.263885, 0.263885)
+position = Vector2(0, 1)
+scale = Vector2(0.37, 0.37)
 texture = ExtResource("2_3xoyr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
