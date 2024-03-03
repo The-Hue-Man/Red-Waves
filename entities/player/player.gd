@@ -4,7 +4,7 @@ extends Entity
 @onready var attack_point = %AttackPoint
 
 @onready var animated_sprite_2d = %AnimatedSprite2D
-const STAB = preload("res://attacks/stab.tscn")
+const STAB = preload("res://weapons/stab.tscn")
 
 
 

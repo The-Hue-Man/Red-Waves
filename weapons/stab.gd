@@ -1,4 +1,4 @@
-extends Attack
+extends Weapon
 
 
 @onready var hit_box = %HitBox
