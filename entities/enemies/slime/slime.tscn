@@ -83,7 +83,7 @@ height = 20.0
 y_sort_enabled = true
 script = ExtResource("1_dk53i")
 max_health = 8
-movement_speed = 90
+movement_speed = 50
 
 [node name="Shadow" type="Sprite2D" parent="."]
 position = Vector2(0, 3)

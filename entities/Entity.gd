@@ -17,6 +17,10 @@ extends CharacterBody2D
 @export_category("Other")
 @export var faction:String
 
+@export_category("Weapons")
+@export var weapons:Array[PackedScene]
+@export var weapon_origin:Marker2D
+
 
 func _ready():
 	set_motion_mode(MOTION_MODE_FLOATING)
@@ -32,6 +36,32 @@ func check_health():
 	if current_health <= 0:
 		print(entity_name, " has died")
 		queue_free()
+
+
+
+
+func attack(target:Vector2):
+	for weapon in weapons:
+		var weapon_spawned = weapon.instantiate()
+		
+		weapon_spawned.global_position = weapon_origin.global_position
+		
+		weapon_spawned.look_at(target)
+		
+		get_parent().add_child(weapon_spawned)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 func get_health() ->int:

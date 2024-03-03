@@ -4,8 +4,6 @@ extends Entity
 @onready var attack_point = %AttackPoint
 
 @onready var animated_sprite_2d = %AnimatedSprite2D
-const STAB = preload("res://weapons/stab.tscn")
-
 
 
 func _ready():
@@ -18,7 +16,7 @@ func _ready():
 
 func _physics_process(delta):
 	movement(_get_move_input())
-	_attack()
+	attack(get_global_mouse_position())
 
 
 func _get_move_input() -> Vector2:
@@ -39,20 +37,4 @@ func movement(direction):
 		animated_sprite_2d.flip_h = false
 	
 	move_and_slide()
-
-
-
-
-func _attack():
-	if Input.is_action_pressed("attack"):
-		var attack = STAB.instantiate()
-		attack.global_position = attack_point.global_position
-		
-		attack.look_at(get_global_mouse_position())
-		
-		get_parent().add_child(attack)
-	
-	
-	pass
-
 
