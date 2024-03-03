@@ -16,6 +16,7 @@ func _ready():
 	animated_sprite_2d.play()
 	
 	faction = "enemy"
+	add_to_group("enemy")
 
 
 
@@ -41,3 +42,7 @@ func _on_area_2d_body_entered(body):
 	if body.is_in_group("PlayerGroup"):
 		target_locked = true
 		
+
+
+func _on_damage_box_body_entered(body):
+	pass # Replace with function body.

@@ -20,12 +20,19 @@ extends CharacterBody2D
 
 func _ready():
 	set_motion_mode(MOTION_MODE_FLOATING)
-	
+	current_health = max_health
 
 
 func take_damage(damage: int):
-	pass
-	
+	print(entity_name, " took ", damage, " damage")
+	current_health -= damage
+	check_health()
+
+func check_health():
+	if current_health <= 0:
+		print(entity_name, " has died")
+		queue_free()
+
 
 func get_health() ->int:
 	return current_health

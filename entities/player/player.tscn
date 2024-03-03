@@ -67,7 +67,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" groups=["PlayerGroup"]]
 script = ExtResource("1_7x1ih")
-max_health = 3
+max_health = 48
 movement_speed = 105
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -87,3 +87,7 @@ animation = &"Idle"
 frame = 1
 frame_progress = 0.928287
 offset = Vector2(0, -9)
+
+[node name="AttackPoint" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -8)
