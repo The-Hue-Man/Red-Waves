@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_7x1ih"]
 [ext_resource type="Texture2D" uid="uid://cummrm2rsacjw" path="res://entities/shared/shadow.png" id="2_3xoyr"]
 [ext_resource type="Texture2D" uid="uid://br4j6hhtmx8o1" path="res://entities/player/abbcharanim.png" id="2_bejfm"]
-[ext_resource type="PackedScene" uid="uid://bpxnrw6kf17pd" path="res://weapons/weapon.tscn" id="5_thabd"]
+[ext_resource type="PackedScene" uid="uid://bpxnrw6kf17pd" path="res://weapons/knife.tscn" id="5_thabd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j1ifq"]
 radius = 3.0
@@ -94,6 +94,5 @@ offset = Vector2(0, -9)
 unique_name_in_owner = true
 position = Vector2(0, -8)
 
-[node name="Weapon" parent="." node_paths=PackedStringArray("weapon_origin") instance=ExtResource("5_thabd")]
-factions_targeted = Array[String](["enemy"])
+[node name="Knife" parent="." node_paths=PackedStringArray("weapon_origin") instance=ExtResource("5_thabd")]
 weapon_origin = NodePath("../AttackPoint")
