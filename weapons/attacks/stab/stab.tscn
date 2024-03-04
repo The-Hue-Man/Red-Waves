@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://c4awn5c54kbs6"]
+
+[ext_resource type="Script" path="res://weapons/attacks/stab/stab.gd" id="1_ww50i"]
+[ext_resource type="Texture2D" uid="uid://dwvfylau65uxu" path="res://weapons/attacks/stab/knife-sheet.png" id="2_ab4e4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e105o"]
+radius = 4.00058
+height = 26.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8h1h8"]
+atlas = ExtResource("2_ab4e4")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dilt"]
+atlas = ExtResource("2_ab4e4")
+region = Rect2(16, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbj3n"]
+atlas = ExtResource("2_ab4e4")
+region = Rect2(32, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5ls7"]
+atlas = ExtResource("2_ab4e4")
+region = Rect2(48, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1o2kj"]
+atlas = ExtResource("2_ab4e4")
+region = Rect2(64, 0, 16, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fcb1"]
+atlas = ExtResource("2_ab4e4")
+region = Rect2(80, 0, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_41huf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8h1h8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6dilt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbj3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5ls7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1o2kj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fcb1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 60.0
+}]
+
+[node name="Stab" type="Area2D"]
+script = ExtResource("1_ww50i")
+damage = 2
+factions_targeted = Array[String](["enemy"])
+
+[node name="HitBox" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(15, 0)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_e105o")
+
+[node name="Duration" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.07
+one_shot = true
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(12, 0)
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_41huf")
+frame_progress = 0.45492
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Duration" to="." method="_on_duration_timeout"]

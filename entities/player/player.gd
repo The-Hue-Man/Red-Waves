@@ -16,7 +16,6 @@ func _ready():
 
 func _physics_process(delta):
 	movement(_get_move_input())
-	attack(get_global_mouse_position())
 
 
 func _get_move_input() -> Vector2:

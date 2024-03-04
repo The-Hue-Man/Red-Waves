@@ -1,14 +1,14 @@
-extends Weapon
+extends Attack
 
 
 @onready var hit_box = %HitBox
 @onready var duration = %Duration
+@onready var animated_sprite_2d = %AnimatedSprite2D
 
 
 func _ready():
-	print("stab")
-	hit_box.apply_scale(Vector2(area,area))
-
+	apply_scale(Vector2(area,area))
+	animated_sprite_2d.play("default")
 
 
 

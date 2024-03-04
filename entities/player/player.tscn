@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_7x1ih"]
 [ext_resource type="Texture2D" uid="uid://cummrm2rsacjw" path="res://entities/shared/shadow.png" id="2_3xoyr"]
 [ext_resource type="Texture2D" uid="uid://br4j6hhtmx8o1" path="res://entities/player/abbcharanim.png" id="2_bejfm"]
-[ext_resource type="PackedScene" uid="uid://c4awn5c54kbs6" path="res://weapons/stab.tscn" id="2_t81ti"]
+[ext_resource type="PackedScene" uid="uid://bpxnrw6kf17pd" path="res://weapons/weapon.tscn" id="5_thabd"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j1ifq"]
 radius = 3.0
@@ -70,7 +70,6 @@ animations = [{
 script = ExtResource("1_7x1ih")
 max_health = 48
 movement_speed = 105
-weapons = Array[PackedScene]([ExtResource("2_t81ti")])
 weapon_origin = NodePath("AttackPoint")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -94,3 +93,7 @@ offset = Vector2(0, -9)
 [node name="AttackPoint" type="Marker2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(0, -8)
+
+[node name="Weapon" parent="." node_paths=PackedStringArray("weapon_origin") instance=ExtResource("5_thabd")]
+factions_targeted = Array[String](["enemy"])
+weapon_origin = NodePath("../AttackPoint")
