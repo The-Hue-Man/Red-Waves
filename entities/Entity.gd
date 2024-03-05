@@ -17,6 +17,8 @@ extends CharacterBody2D
 @export_category("Other")
 @export var faction:String
 
+
+
 @export_category("Weapons")
 @export var weapon_origin:Marker2D
 

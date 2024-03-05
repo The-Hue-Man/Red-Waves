@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bpxnrw6kf17pd"]
 
-[ext_resource type="Script" path="res://weapons/knife.gd" id="1_tn7xs"]
-[ext_resource type="PackedScene" uid="uid://c4awn5c54kbs6" path="res://weapons/attacks/stab/stab.tscn" id="2_nvt0f"]
+[ext_resource type="Script" path="res://weapons/knife/knife.gd" id="1_cfpx2"]
+[ext_resource type="PackedScene" uid="uid://c4awn5c54kbs6" path="res://weapons/attacks/stab/stab.tscn" id="2_vcyg7"]
 
 [node name="Knife" type="Node2D"]
-script = ExtResource("1_tn7xs")
-attack_scene = ExtResource("2_nvt0f")
+script = ExtResource("1_cfpx2")
+attack_scene = ExtResource("2_vcyg7")
 
 [node name="Cooldown" type="Timer" parent="."]
 unique_name_in_owner = true

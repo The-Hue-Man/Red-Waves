@@ -28,4 +28,5 @@ func _on_area_2d_body_entered(body):
 
 
 func _on_damage_box_body_entered(body):
-	pass # Replace with function body.
+	if body.is_in_group("player"):
+		body.take_damage(1)
