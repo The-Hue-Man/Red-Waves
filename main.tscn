@@ -31,19 +31,19 @@ position = Vector2(507, 274)
 y_sort_enabled = true
 
 [node name="Tree" parent="Trees" instance=ExtResource("4_3otkt")]
-position = Vector2(361, 138)
+position = Vector2(391, 102)
 
 [node name="Tree2" parent="Trees" instance=ExtResource("4_3otkt")]
-position = Vector2(318, 226)
+position = Vector2(55, 210)
 
 [node name="Tree3" parent="Trees" instance=ExtResource("4_3otkt")]
-position = Vector2(429, 330)
+position = Vector2(395, 280)
 
 [node name="Tree4" parent="Trees" instance=ExtResource("4_3otkt")]
 position = Vector2(486, 138)
 
 [node name="Tree5" parent="Trees" instance=ExtResource("4_3otkt")]
-position = Vector2(223, 205)
+position = Vector2(85, 67)
 
 [node name="Enemy2" parent="." instance=ExtResource("5_jwhah")]
 position = Vector2(234, 344)

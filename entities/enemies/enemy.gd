@@ -25,10 +25,12 @@ func _move():
 
 func target_player():
 	var target = GameManager.get_player_global_position()
+		
 	direction = global_position.direction_to(target)
 	if target.x > position.x:
 		enemy_sprite.flip_h = true
 	else:
 		enemy_sprite.flip_h = false
+
 
 

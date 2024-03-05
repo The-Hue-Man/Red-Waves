@@ -68,6 +68,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("weapon_origin") groups=["PlayerGroup"]]
 script = ExtResource("1_7x1ih")
+entity_name = "Player"
 max_health = 71
 movement_speed = 105
 weapon_origin = NodePath("AttackPoint")
