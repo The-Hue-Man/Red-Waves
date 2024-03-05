@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://jw6wvouvwwfk"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_7x1ih"]
-[ext_resource type="Texture2D" uid="uid://cummrm2rsacjw" path="res://entities/shared/shadow.png" id="2_3xoyr"]
+[ext_resource type="Texture2D" uid="uid://cummrm2rsacjw" path="res://shared/shadow.png" id="2_5wmt6"]
 [ext_resource type="Texture2D" uid="uid://br4j6hhtmx8o1" path="res://entities/player/abbcharanim.png" id="2_bejfm"]
 [ext_resource type="PackedScene" uid="uid://bpxnrw6kf17pd" path="res://weapons/knife/knife.tscn" id="4_c2iee"]
 
@@ -79,7 +79,7 @@ shape = SubResource("CapsuleShape2D_j1ifq")
 [node name="Shadow" type="Sprite2D" parent="."]
 position = Vector2(0, 1)
 scale = Vector2(0.37, 0.37)
-texture = ExtResource("2_3xoyr")
+texture = ExtResource("2_5wmt6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true

@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=3 uid="uid://bksw3rfrgifsc"]
+
+[ext_resource type="Script" path="res://entities/enemies/big_slime/big_slime.gd" id="1_n1gr2"]
+[ext_resource type="Texture2D" uid="uid://cummrm2rsacjw" path="res://shared/shadow.png" id="2_2gm53"]
+[ext_resource type="Texture2D" uid="uid://cj40qmoi76lcj" path="res://entities/enemies/big_slime/big_slimev2.png" id="2_prpcd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1owr"]
+atlas = ExtResource("2_prpcd")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fp13"]
+atlas = ExtResource("2_prpcd")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nl7vj"]
+atlas = ExtResource("2_prpcd")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_la8fb"]
+atlas = ExtResource("2_prpcd")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_paebv"]
+atlas = ExtResource("2_prpcd")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8pg2d"]
+atlas = ExtResource("2_prpcd")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j73as"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1owr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fp13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nl7vj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_la8fb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_paebv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8pg2d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a843y"]
+radius = 4.0
+height = 16.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_keuxm"]
+radius = 6.0
+height = 20.0
+
+[node name="big_slime" type="CharacterBody2D" node_paths=PackedStringArray("enemy_sprite")]
+script = ExtResource("1_n1gr2")
+enemy_sprite = NodePath("AnimatedSprite2D")
+contact_damage = 61
+max_health = 106
+movement_speed = 40
+
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_2gm53")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_j73as")
+frame = 5
+frame_progress = 0.895591
+offset = Vector2(0, -5)
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(4.54747e-13, -7.15256e-07)
+rotation = 1.5708
+scale = Vector2(1.66157, 2.04491)
+shape = SubResource("CapsuleShape2D_a843y")
+
+[node name="Damage_box" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage_box"]
+position = Vector2(2.27374e-13, -1)
+rotation = 1.5708
+scale = Vector2(1.46804, 1.81976)
+shape = SubResource("CapsuleShape2D_keuxm")
+
+[connection signal="body_entered" from="Damage_box" to="." method="_on_damage_box_body_entered"]

@@ -1,67 +1,67 @@
 [gd_scene load_steps=16 format=3 uid="uid://3ahcv24obb5n"]
 
 [ext_resource type="Script" path="res://entities/enemies/slime/slime.gd" id="1_dk53i"]
-[ext_resource type="Texture2D" uid="uid://j7q61y8f7q2g" path="res://entities/enemies/slime/slime.png" id="2_xkqla"]
-[ext_resource type="Texture2D" uid="uid://cummrm2rsacjw" path="res://entities/shared/shadow.png" id="3_8vgeo"]
+[ext_resource type="Texture2D" uid="uid://cummrm2rsacjw" path="res://shared/shadow.png" id="2_mpmgv"]
+[ext_resource type="Texture2D" uid="uid://cn0s2a5mmhlwg" path="res://entities/enemies/slime/slimev3.png" id="3_v8ard"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bxjjr"]
-atlas = ExtResource("2_xkqla")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ls85w"]
+atlas = ExtResource("3_v8ard")
 region = Rect2(0, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lcjon"]
-atlas = ExtResource("2_xkqla")
+[sub_resource type="AtlasTexture" id="AtlasTexture_moaqt"]
+atlas = ExtResource("3_v8ard")
 region = Rect2(24, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v38uo"]
-atlas = ExtResource("2_xkqla")
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc85k"]
+atlas = ExtResource("3_v8ard")
 region = Rect2(48, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nfkev"]
-atlas = ExtResource("2_xkqla")
+[sub_resource type="AtlasTexture" id="AtlasTexture_i38jh"]
+atlas = ExtResource("3_v8ard")
 region = Rect2(72, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1dqcj"]
-atlas = ExtResource("2_xkqla")
+[sub_resource type="AtlasTexture" id="AtlasTexture_px6qb"]
+atlas = ExtResource("3_v8ard")
 region = Rect2(96, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nn424"]
-atlas = ExtResource("2_xkqla")
+[sub_resource type="AtlasTexture" id="AtlasTexture_faxkk"]
+atlas = ExtResource("3_v8ard")
 region = Rect2(120, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lbtcp"]
-atlas = ExtResource("2_xkqla")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ja7f6"]
+atlas = ExtResource("3_v8ard")
 region = Rect2(144, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fhqs7"]
-atlas = ExtResource("2_xkqla")
+[sub_resource type="AtlasTexture" id="AtlasTexture_qopwl"]
+atlas = ExtResource("3_v8ard")
 region = Rect2(168, 0, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h20f0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bxjjr")
+"texture": SubResource("AtlasTexture_ls85w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lcjon")
+"texture": SubResource("AtlasTexture_moaqt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v38uo")
+"texture": SubResource("AtlasTexture_mc85k")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nfkev")
+"texture": SubResource("AtlasTexture_i38jh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1dqcj")
+"texture": SubResource("AtlasTexture_px6qb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nn424")
+"texture": SubResource("AtlasTexture_faxkk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lbtcp")
+"texture": SubResource("AtlasTexture_ja7f6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fhqs7")
+"texture": SubResource("AtlasTexture_qopwl")
 }],
 "loop": true,
 "name": &"Idle",
@@ -79,23 +79,24 @@ radius = 109.041
 radius = 6.0
 height = 20.0
 
-[node name="Slime" type="CharacterBody2D" groups=["EnemyGroup"]]
+[node name="Slime" type="CharacterBody2D" node_paths=PackedStringArray("enemy_sprite") groups=["EnemyGroup"]]
 y_sort_enabled = true
 script = ExtResource("1_dk53i")
+enemy_sprite = NodePath("AnimatedSprite2D")
 max_health = 8
 movement_speed = 35
 
 [node name="Shadow" type="Sprite2D" parent="."]
 position = Vector2(0, 3)
 scale = Vector2(0.475, 0.475)
-texture = ExtResource("3_8vgeo")
+texture = ExtResource("2_mpmgv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_h20f0")
 animation = &"Idle"
-frame_progress = 0.229875
+frame_progress = 0.59681
 offset = Vector2(0, -3.89)
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]

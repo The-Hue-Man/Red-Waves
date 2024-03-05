@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cummrm2rsacjw"
-path="res://.godot/imported/shadow.png-13f7dcd267ecc0deede202b28eb4bbe8.ctex"
+uid="uid://cn0s2a5mmhlwg"
+path="res://.godot/imported/slimev3.png-4e2c7ce554915813958fc2974c8f847f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://entities/shared/shadow.png"
-dest_files=["res://.godot/imported/shadow.png-13f7dcd267ecc0deede202b28eb4bbe8.ctex"]
+source_file="res://entities/enemies/slime/slimev3.png"
+dest_files=["res://.godot/imported/slimev3.png-4e2c7ce554915813958fc2974c8f847f.ctex"]
 
 [params]
 

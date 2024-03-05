@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://hbgtattk8upt"]
+[gd_scene load_steps=6 format=3 uid="uid://hbgtattk8upt"]
 
 [ext_resource type="PackedScene" uid="uid://cpmcxta1lrmst" path="res://tilesets/tile_map.tscn" id="1_addwt"]
 [ext_resource type="PackedScene" uid="uid://jw6wvouvwwfk" path="res://entities/player/player.tscn" id="1_ci8gl"]
 [ext_resource type="PackedScene" uid="uid://3ahcv24obb5n" path="res://entities/enemies/slime/slime.tscn" id="3_k852e"]
 [ext_resource type="PackedScene" uid="uid://dveysy1ncdv5y" path="res://static_objects/tree/big_red_tree.tscn" id="4_3otkt"]
+[ext_resource type="PackedScene" uid="uid://bksw3rfrgifsc" path="res://entities/enemies/big_slime/big_slime.tscn" id="5_jwhah"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -26,17 +27,23 @@ drag_bottom_margin = 0.05
 [node name="Enemy" parent="." instance=ExtResource("3_k852e")]
 position = Vector2(507, 274)
 
-[node name="Tree" parent="." instance=ExtResource("4_3otkt")]
+[node name="Trees" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Tree" parent="Trees" instance=ExtResource("4_3otkt")]
 position = Vector2(361, 138)
 
-[node name="Tree2" parent="." instance=ExtResource("4_3otkt")]
-position = Vector2(314, 151)
+[node name="Tree2" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(318, 226)
 
-[node name="Tree3" parent="." instance=ExtResource("4_3otkt")]
-position = Vector2(335, 134)
+[node name="Tree3" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(429, 330)
 
-[node name="Tree4" parent="." instance=ExtResource("4_3otkt")]
-position = Vector2(448, 138)
+[node name="Tree4" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(486, 138)
 
-[node name="Tree5" parent="." instance=ExtResource("4_3otkt")]
+[node name="Tree5" parent="Trees" instance=ExtResource("4_3otkt")]
 position = Vector2(223, 205)
+
+[node name="Enemy2" parent="." instance=ExtResource("5_jwhah")]
+position = Vector2(234, 344)

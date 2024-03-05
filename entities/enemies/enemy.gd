@@ -6,6 +6,10 @@ var direction: Vector2 = Vector2(0,0)
 var target_position: Vector2 = Vector2(0,0)
 var target_locked: bool = false
 
+@export var enemy_sprite: AnimatedSprite2D
+@export var contact_damage:int = 1
+
+
 
 func _ready():
 	#Calls the Entity class Ready function
@@ -22,5 +26,9 @@ func _move():
 func target_player():
 	var target = GameManager.get_player_global_position()
 	direction = global_position.direction_to(target)
+	if target.x > position.x:
+		enemy_sprite.flip_h = true
+	else:
+		enemy_sprite.flip_h = false
 
 

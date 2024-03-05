@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dveysy1ncdv5y"]
+[gd_scene load_steps=6 format=3 uid="uid://dveysy1ncdv5y"]
 
 [ext_resource type="Texture2D" uid="uid://cs2026svnvf7p" path="res://static_objects/tree/big_red_treev2.png" id="1_k5tlg"]
 [ext_resource type="Script" path="res://static_objects/tree/big_red_tree.gd" id="1_tsv84"]
+[ext_resource type="Texture2D" uid="uid://cummrm2rsacjw" path="res://shared/shadow.png" id="3_fh6sq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wqe6e"]
 radius = 21.0
@@ -14,6 +15,10 @@ height = 18.0
 [node name="Tree" type="StaticBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_tsv84")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+texture = ExtResource("3_fh6sq")
+offset = Vector2(0, 5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 unique_name_in_owner = true
