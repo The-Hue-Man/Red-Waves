@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://0c7wvly2w048"]
+
+[ext_resource type="Script" path="res://weapons/pulser/pulser.gd" id="1_k4t0d"]
+[ext_resource type="PackedScene" uid="uid://k5h7vufdgced" path="res://weapons/attacks/pulse/pulse.tscn" id="2_m3u38"]
+
+[node name="Pulser" type="Node2D"]
+script = ExtResource("1_k4t0d")
+weapon_name = "Pulser"
+damage = 10
+factions_targeted = Array[String](["enemy"])
+weapon_cooldown = 2.1
+attack_scene = ExtResource("2_m3u38")
+
+[node name="Cooldown" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

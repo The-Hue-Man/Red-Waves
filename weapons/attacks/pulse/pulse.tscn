@@ -1,0 +1,126 @@
+[gd_scene load_steps=15 format=3 uid="uid://k5h7vufdgced"]
+
+[ext_resource type="Script" path="res://weapons/attacks/pulse/pulse.gd" id="1_ak6tg"]
+[ext_resource type="Texture2D" uid="uid://d7yvmvk2mj7r" path="res://weapons/attacks/pulse/pulse.png" id="2_5rdck"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipn76"]
+atlas = ExtResource("2_5rdck")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn6l7"]
+atlas = ExtResource("2_5rdck")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxq5i"]
+atlas = ExtResource("2_5rdck")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84h6y"]
+atlas = ExtResource("2_5rdck")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_diiuu"]
+atlas = ExtResource("2_5rdck")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpnc1"]
+atlas = ExtResource("2_5rdck")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wm1sw"]
+atlas = ExtResource("2_5rdck")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyw6r"]
+atlas = ExtResource("2_5rdck")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rvgxy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipn76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn6l7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxq5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84h6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_diiuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpnc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wm1sw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyw6r")
+}],
+"loop": true,
+"name": &"default",
+"speed": 14.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ajhnp"]
+radius = 2.0
+
+[sub_resource type="Animation" id="Animation_cnooa"]
+resource_name = "pulse"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1e-05),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(16.5, 16.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o7b1d"]
+_data = {
+"pulse": SubResource("Animation_cnooa")
+}
+
+[node name="Pulse" type="Area2D"]
+script = ExtResource("1_ak6tg")
+damage = 10
+factions_targeted = Array[String](["enemy"])
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+sprite_frames = SubResource("SpriteFrames_rvgxy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ajhnp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_o7b1d")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -10,7 +10,7 @@
 y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_ci8gl")]
-position = Vector2(421, 176)
+position = Vector2(420, 175)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 process_callback = 0

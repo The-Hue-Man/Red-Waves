@@ -14,7 +14,7 @@ func _ready():
 	faction = "player"
 	animated_sprite_2d.play("Idle")
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	movement(_get_move_input())
 
 

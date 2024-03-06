@@ -12,7 +12,7 @@ func _ready():
 
 
 
-func _on_body_entered(body:Entity):
+func _on_body_entered(body):
 	for group in factions_targeted:
 		if body.is_in_group(group):
 			body.take_damage(damage)
