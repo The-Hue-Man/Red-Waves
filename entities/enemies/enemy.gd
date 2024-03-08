@@ -15,6 +15,7 @@ func _ready():
 	#Calls the Entity class Ready function
 	super._ready()
 	
+	enemy_sprite.flip_h = randi_range(0,1)
 	faction = "enemy"
 	add_to_group("enemy")
 

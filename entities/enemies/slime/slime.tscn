@@ -83,7 +83,8 @@ height = 20.0
 y_sort_enabled = true
 script = ExtResource("1_dk53i")
 enemy_sprite = NodePath("AnimatedSprite2D")
-max_health = 8
+entity_name = "Slime"
+max_health = 2
 movement_speed = 35
 
 [node name="Shadow" type="Sprite2D" parent="."]

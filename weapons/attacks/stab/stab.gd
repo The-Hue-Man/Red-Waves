@@ -7,7 +7,6 @@ extends Attack
 
 
 func _ready():
-	apply_scale(Vector2(area,area))
 	animated_sprite_2d.play("default")
 
 

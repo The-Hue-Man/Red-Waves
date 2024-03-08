@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwusi8cl1dq2t"]
+
+[ext_resource type="Script" path="res://enemy_spawn_path.gd" id="1_qeagp"]
+
+[sub_resource type="Curve2D" id="Curve2D_4dnt6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 776, -112, 0, 0, 0, 0, 328, -184, 0, 0, 0, 0, -128, -136, 0, 0, 0, 0, -208, 176, 0, 0, 0, 0, -144, 480, 0, 0, 0, 0, 312, 592, 0, 0, 0, 0, 800, 456, 0, 0, 0, 0, 896, 136, 0, 0, 0, 0, 776, -112)
+}
+point_count = 9
+
+[node name="EnemySpawnPath" type="Path2D"]
+curve = SubResource("Curve2D_4dnt6")
+script = ExtResource("1_qeagp")
+
+[node name="EnemySpawnLocation" type="PathFollow2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(776, -112)
+rotation = -2.98224
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

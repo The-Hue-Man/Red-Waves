@@ -6,6 +6,12 @@ extends Entity
 @onready var animated_sprite_2d = %AnimatedSprite2D
 
 
+
+var current_experience:int = 0
+
+var current_level:int = 1
+
+
 func _ready():
 	#Calls the Entity class Ready function
 	super._ready()
@@ -37,3 +43,28 @@ func movement(direction):
 	
 	move_and_slide()
 
+
+
+
+
+
+func update_experience():
+	if get_experience() > experience_needed(current_level):
+		levelup()
+
+
+func add_experience(experience:int):
+	current_experience += experience
+
+func get_experience()-> int:
+	return current_experience
+
+
+func experience_needed(level) -> int:
+	return round(level^1.2 * 1000)
+
+
+func levelup():
+	current_level += 1
+	
+	print("player has levelled up to level ", current_level)

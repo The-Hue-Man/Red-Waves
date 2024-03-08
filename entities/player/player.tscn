@@ -100,4 +100,5 @@ position = Vector2(0, -8)
 weapon_origin = NodePath("../AttackPoint")
 
 [node name="Pulser" parent="." node_paths=PackedStringArray("weapon_origin") instance=ExtResource("5_ioev0")]
+damage = 5
 weapon_origin = NodePath("../AttackPoint")

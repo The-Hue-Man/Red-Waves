@@ -65,8 +65,9 @@ height = 20.0
 [node name="big_slime" type="CharacterBody2D" node_paths=PackedStringArray("enemy_sprite")]
 script = ExtResource("1_n1gr2")
 enemy_sprite = NodePath("AnimatedSprite2D")
-contact_damage = 61
-max_health = 10
+contact_damage = 6
+entity_name = "Big Slime"
+max_health = 2
 movement_speed = 40
 
 [node name="Shadow" type="Sprite2D" parent="."]
