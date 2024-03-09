@@ -43,6 +43,21 @@ position = Vector2(507, 274)
 [node name="Trees" type="Node2D" parent="."]
 y_sort_enabled = true
 
+[node name="Tree6" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(-22, 694)
+
+[node name="Tree7" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(589, 433)
+
+[node name="Tree8" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(929, 503)
+
+[node name="Tree9" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(73, 730)
+
+[node name="Tree10" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(619, 290)
+
 [node name="Tree" parent="Trees" instance=ExtResource("4_3otkt")]
 position = Vector2(391, 102)
 
@@ -57,6 +72,36 @@ position = Vector2(486, 138)
 
 [node name="Tree5" parent="Trees" instance=ExtResource("4_3otkt")]
 position = Vector2(85, 67)
+
+[node name="Tree11" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(-241, 1582)
+
+[node name="Tree12" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(710, 1391)
+
+[node name="Tree13" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(172, 990)
+
+[node name="Tree14" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(267, 1026)
+
+[node name="Tree15" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(-134, 955)
+
+[node name="Tree16" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(1260, 304)
+
+[node name="Tree17" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(1120, 372)
+
+[node name="Tree18" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(1083, 950)
+
+[node name="Tree19" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(1549, 636)
+
+[node name="Tree20" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(1148, 565)
 
 [node name="Enemy2" parent="." instance=ExtResource("5_jwhah")]
 position = Vector2(234, 344)

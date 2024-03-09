@@ -3,6 +3,10 @@ extends Node
 @onready var player = get_tree().get_nodes_in_group("PlayerGroup")[0]
 @onready var player_coordinates = get_tree().get_nodes_in_group("PlayerGroup")[0].global_position
 
+var enemy_count: int
+var score: int = 0
+
+
 
 func game_over():
 	get_tree().reload_scene()

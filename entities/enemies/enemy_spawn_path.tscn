@@ -4,7 +4,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_4dnt6"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 776, -112, 0, 0, 0, 0, 328, -184, 0, 0, 0, 0, -128, -136, 0, 0, 0, 0, -208, 176, 0, 0, 0, 0, -144, 480, 0, 0, 0, 0, 312, 592, 0, 0, 0, 0, 800, 456, 0, 0, 0, 0, 896, 136, 0, 0, 0, 0, 776, -112)
+"points": PackedVector2Array(0, 0, 0, 0, 680, -40, 0, 0, 0, 0, 320, -80, 0, 0, 0, 0, -56, -48, 0, 0, 0, 0, -72, 184, 0, 0, 0, 0, -56, 400, 0, 0, 0, 0, 312, 464, 0, 0, 0, 0, 688, 416, 0, 0, 0, 0, 712, 184, 0, 0, 0, 0, 680, -40)
 }
 point_count = 9
 
@@ -14,11 +14,10 @@ script = ExtResource("1_qeagp")
 
 [node name="EnemySpawnLocation" type="PathFollow2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(776, -112)
-rotation = -2.98224
+position = Vector2(680, -40)
+rotation = -3.03094
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 2.0
 autostart = true
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

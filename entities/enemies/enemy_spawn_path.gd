@@ -14,8 +14,7 @@ func _on_spawn_timer_timeout():
 
 func spawn_enemy_set_random_location(new_enemy):
 	enemy_spawn_location.progress_ratio = randf()
-	var random_position_modifer: Vector2 = Vector2(randi_range(-12,21),randi_range(-15,20))
-	new_enemy.global_position = enemy_spawn_location.global_position + random_position_modifer
+	new_enemy.global_position = enemy_spawn_location.global_position
 	
 	#get the tile the enemy is standing on
 	var new_enemy_tile_position = tile_map.get_cell_atlas_coords(0,tile_map.local_to_map(new_enemy.position))
@@ -31,9 +30,14 @@ func spawn_enemy_set_random_location(new_enemy):
 func spawn_enemies():
 	for enemy in enemies_spawned:
 		
-		var new_enemy = enemy.instantiate()
-		
-		spawn_enemy_set_random_location(new_enemy)
-		
-		get_tree().get_current_scene().add_child(new_enemy)
+		if GameManager.enemy_count < 300:
+			var new_enemy = enemy.instantiate()
+			
+			var new_rand_scale = randf_range(2,3)
+			new_enemy.scale = Vector2(new_rand_scale,new_rand_scale)
+			
+			
+			spawn_enemy_set_random_location(new_enemy)
+			
+			get_tree().get_current_scene().add_child(new_enemy)
 	

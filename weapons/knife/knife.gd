@@ -1,5 +1,13 @@
 extends Weapon
 
+@onready var cooldown_timer = %Cooldown
+
+
+
+
+func _ready():
+	cooldown_timer.set_wait_time(weapon_cooldown)
+
 
 func attack(attack_origin:Marker2D,target:Vector2,input_area:float):
 	
@@ -17,5 +25,6 @@ func attack(attack_origin:Marker2D,target:Vector2,input_area:float):
 
 
 func _on_cooldown_timeout():
+	cooldown_timer.set_wait_time(weapon_cooldown)
 	attack(weapon_origin,get_local_mouse_position(),area)
 

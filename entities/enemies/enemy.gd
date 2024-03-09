@@ -20,19 +20,22 @@ func _ready():
 	enemy_sprite.flip_h = randi_range(0,1)
 	faction = "enemy"
 	add_to_group("enemy")
+	
+	GameManager.enemy_count += 1
 
 
 
 func _move():
 	velocity = direction * movement_speed
 	
-	for i in neighbors:
-		if abs(i.position - GameManager.get_player_global_position()) < abs(position - GameManager.get_player_global_position()):
-			velocity /= 1.5
-		
+	#for i in neighbors:
+	#	if abs(i.position - GameManager.get_player_global_position()) < abs(position - GameManager.get_player_global_position()):
+	#		velocity /= 1.5
+	#	
 	
 	
 	move_and_slide()
+
 
 func target_player():
 	var target = GameManager.get_player_global_position()

@@ -12,6 +12,7 @@ extends Node2D
 
 @export var attack_scene:PackedScene
 
+
 func _ready():
 	pass
 

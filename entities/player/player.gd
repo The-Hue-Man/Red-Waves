@@ -6,8 +6,6 @@ extends Entity
 @onready var animated_sprite_2d = %AnimatedSprite2D
 @onready var flash_animation = %"Flash animation"
 
-
-
 var current_experience:int = 0
 
 var current_level:int = 1
@@ -20,6 +18,7 @@ func _ready():
 	
 	faction = "player"
 	animated_sprite_2d.play("Idle")
+
 
 func _physics_process(_delta):
 	movement(_get_move_input())
@@ -70,6 +69,7 @@ func experience_needed(level) -> int:
 func levelup():
 	current_level += 1
 	
+	
 	print("player has levelled up to level ", current_level)
 
 
@@ -77,3 +77,6 @@ func take_damage(damage: int):
 	super.take_damage(damage)
 	flash_animation.play("flash")
 
+
+func get_level()-> int:
+	return current_level

@@ -14,17 +14,9 @@ func _ready():
 
 func _physics_process(_delta):
 	
-	if target_locked:
-		target_player()
+	target_player()
 	
 	_move()
-	
-
-
-func _on_area_2d_body_entered(body):
-	if body.is_in_group("PlayerGroup"):
-		print("player detected")
-		target_locked = true
 	
 
 
