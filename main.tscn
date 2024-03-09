@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://3ahcv24obb5n" path="res://entities/enemies/slime/slime.tscn" id="3_k852e"]
 [ext_resource type="PackedScene" uid="uid://dveysy1ncdv5y" path="res://static_objects/tree/big_red_tree.tscn" id="4_3otkt"]
 [ext_resource type="PackedScene" uid="uid://bksw3rfrgifsc" path="res://entities/enemies/big_slime/big_slime.tscn" id="5_jwhah"]
-[ext_resource type="PackedScene" uid="uid://bwusi8cl1dq2t" path="res://enemy_spawn_path.tscn" id="6_w12l0"]
+[ext_resource type="PackedScene" uid="uid://bwusi8cl1dq2t" path="res://entities/enemies/enemy_spawn_path.tscn" id="6_w12l0"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true

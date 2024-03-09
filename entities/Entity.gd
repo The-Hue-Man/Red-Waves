@@ -28,6 +28,8 @@ const CORPSE = preload("res://entities/corpse/corpse.tscn")
 
 func _ready():
 	set_motion_mode(MOTION_MODE_FLOATING)
+	
+	
 	current_health = max_health
 
 

@@ -4,6 +4,7 @@ extends Entity
 @onready var attack_point = %AttackPoint
 
 @onready var animated_sprite_2d = %AnimatedSprite2D
+@onready var flash_animation = %"Flash animation"
 
 
 
@@ -70,3 +71,9 @@ func levelup():
 	current_level += 1
 	
 	print("player has levelled up to level ", current_level)
+
+
+func take_damage(damage: int):
+	super.take_damage(damage)
+	flash_animation.play("flash")
+

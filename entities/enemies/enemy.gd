@@ -32,6 +32,3 @@ func target_player():
 		enemy_sprite.flip_h = true
 	else:
 		enemy_sprite.flip_h = false
-
-
-

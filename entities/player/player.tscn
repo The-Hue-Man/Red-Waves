@@ -1,10 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://jw6wvouvwwfk"]
+[gd_scene load_steps=20 format=3 uid="uid://jw6wvouvwwfk"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_7x1ih"]
+[ext_resource type="Shader" path="res://entities/player/flash.gdshader" id="1_nt3yf"]
 [ext_resource type="Texture2D" uid="uid://cummrm2rsacjw" path="res://entities/shared/shadow.png" id="2_5wmt6"]
 [ext_resource type="Texture2D" uid="uid://br4j6hhtmx8o1" path="res://entities/player/abbcharanim.png" id="2_bejfm"]
 [ext_resource type="PackedScene" uid="uid://bpxnrw6kf17pd" path="res://weapons/knife/knife.tscn" id="4_c2iee"]
 [ext_resource type="PackedScene" uid="uid://0c7wvly2w048" path="res://weapons/pulser/pulser.tscn" id="5_ioev0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tray3"]
+resource_local_to_scene = true
+shader = ExtResource("1_nt3yf")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifer = 0.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j1ifq"]
 radius = 3.0
@@ -67,7 +74,45 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_0q815"]
+resource_name = "flash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/flash_modifer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_prjsf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/flash_modifer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v5gkj"]
+_data = {
+"RESET": SubResource("Animation_prjsf"),
+"flash": SubResource("Animation_0q815")
+}
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("weapon_origin") groups=["PlayerGroup"]]
+material = SubResource("ShaderMaterial_tray3")
 script = ExtResource("1_7x1ih")
 entity_name = "Player"
 max_health = 71
@@ -86,6 +131,7 @@ texture = ExtResource("2_5wmt6")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 y_sort_enabled = true
+use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_xe2re")
 animation = &"Idle"
 frame = 1
@@ -97,8 +143,15 @@ unique_name_in_owner = true
 position = Vector2(0, -8)
 
 [node name="Knife" parent="." node_paths=PackedStringArray("weapon_origin") instance=ExtResource("4_c2iee")]
+use_parent_material = true
 weapon_origin = NodePath("../AttackPoint")
 
 [node name="Pulser" parent="." node_paths=PackedStringArray("weapon_origin") instance=ExtResource("5_ioev0")]
 damage = 5
 weapon_origin = NodePath("../AttackPoint")
+
+[node name="Flash animation" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_v5gkj")
+}
