@@ -54,20 +54,21 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a843y"]
-radius = 4.0
-height = 16.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsvap"]
+size = Vector2(7.22212, 14.6706)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_keuxm"]
 radius = 6.0
 height = 20.0
 
 [node name="big_slime" type="CharacterBody2D" node_paths=PackedStringArray("enemy_sprite")]
+collision_layer = 3
+safe_margin = 1.0
 script = ExtResource("1_n1gr2")
 enemy_sprite = NodePath("AnimatedSprite2D")
 contact_damage = 6
 entity_name = "Big Slime"
-max_health = 2
+max_health = 16
 movement_speed = 40
 experience_contained = 745
 
@@ -84,10 +85,10 @@ frame_progress = 0.895591
 offset = Vector2(0, -5)
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(4.54747e-13, -7.15256e-07)
+position = Vector2(1, -2.00004)
 rotation = 1.5708
 scale = Vector2(1.66157, 2.04491)
-shape = SubResource("CapsuleShape2D_a843y")
+shape = SubResource("RectangleShape2D_xsvap")
 
 [node name="Damage_box" type="Area2D" parent="."]
 
@@ -98,3 +99,4 @@ scale = Vector2(1.46804, 1.81976)
 shape = SubResource("CapsuleShape2D_keuxm")
 
 [connection signal="body_entered" from="Damage_box" to="." method="_on_damage_box_body_entered"]
+[connection signal="body_exited" from="Damage_box" to="." method="_on_damage_box_body_exited"]

@@ -10,6 +10,8 @@ var target_locked: bool = false
 @export var contact_damage:int = 1
 
 
+var neighbors: Array
+
 
 func _ready():
 	#Calls the Entity class Ready function
@@ -20,8 +22,16 @@ func _ready():
 	add_to_group("enemy")
 
 
+
 func _move():
 	velocity = direction * movement_speed
+	
+	for i in neighbors:
+		if abs(i.position - GameManager.get_player_global_position()) < abs(position - GameManager.get_player_global_position()):
+			velocity /= 1.5
+		
+	
+	
 	move_and_slide()
 
 func target_player():

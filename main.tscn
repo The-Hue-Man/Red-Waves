@@ -1,16 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://hbgtattk8upt"]
+[gd_scene load_steps=9 format=3 uid="uid://hbgtattk8upt"]
 
 [ext_resource type="PackedScene" uid="uid://cpmcxta1lrmst" path="res://tilesets/tile_map.tscn" id="1_addwt"]
 [ext_resource type="PackedScene" uid="uid://jw6wvouvwwfk" path="res://entities/player/player.tscn" id="1_ci8gl"]
+[ext_resource type="Shader" path="res://entities/player/flash.gdshader" id="2_up8ij"]
 [ext_resource type="PackedScene" uid="uid://3ahcv24obb5n" path="res://entities/enemies/slime/slime.tscn" id="3_k852e"]
 [ext_resource type="PackedScene" uid="uid://dveysy1ncdv5y" path="res://static_objects/tree/big_red_tree.tscn" id="4_3otkt"]
 [ext_resource type="PackedScene" uid="uid://bksw3rfrgifsc" path="res://entities/enemies/big_slime/big_slime.tscn" id="5_jwhah"]
 [ext_resource type="PackedScene" uid="uid://bwusi8cl1dq2t" path="res://entities/enemies/enemy_spawn_path.tscn" id="6_w12l0"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kivws"]
+resource_local_to_scene = true
+shader = ExtResource("2_up8ij")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifer = 0.0
+
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_ci8gl")]
+material = SubResource("ShaderMaterial_kivws")
 position = Vector2(420, 175)
 
 [node name="EnemySpawnPath" parent="Player" node_paths=PackedStringArray("tile_map") instance=ExtResource("6_w12l0")]

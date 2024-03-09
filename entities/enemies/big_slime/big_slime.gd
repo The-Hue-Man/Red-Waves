@@ -15,7 +15,6 @@ func _ready():
 func _physics_process(_delta):
 	
 	target_player()
-	
 	_move()
 	
 
@@ -23,3 +22,14 @@ func _physics_process(_delta):
 func _on_damage_box_body_entered(body):
 	if body.is_in_group("player"):
 		body.take_damage(contact_damage)
+	
+	if body.is_in_group("enemy"):
+		neighbors.append(body)
+
+
+
+
+
+func _on_damage_box_body_exited(body):
+	neighbors.erase(body)
+

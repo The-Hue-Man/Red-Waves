@@ -81,6 +81,7 @@ height = 20.0
 
 [node name="Slime" type="CharacterBody2D" node_paths=PackedStringArray("enemy_sprite") groups=["EnemyGroup"]]
 y_sort_enabled = true
+collision_layer = 3
 script = ExtResource("1_dk53i")
 enemy_sprite = NodePath("AnimatedSprite2D")
 entity_name = "Slime"
