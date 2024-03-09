@@ -7,13 +7,11 @@ extends Attack
 
 
 func _ready():
-	print("pulse")
 	animated_sprite_2d.visible = true
 	animation_player.play("pulse")
 	
 
 func _on_body_entered(body):
-	print("pulse hit")
 	
 	for group in factions_targeted:
 		if body.is_in_group(group):

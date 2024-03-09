@@ -53,15 +53,17 @@ func update_experience():
 		levelup()
 
 
-func add_experience(experience:int):
-	current_experience += experience
+func add_experience(added_experience:int):
+	print("player gained ", added_experience, " experience")
+	current_experience += added_experience
+	update_experience()
 
 func get_experience()-> int:
 	return current_experience
 
 
 func experience_needed(level) -> int:
-	return round(level^1.2 * 1000)
+	return round(level * level * 500)
 
 
 func levelup():

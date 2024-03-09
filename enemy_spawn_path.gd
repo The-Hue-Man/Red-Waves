@@ -17,8 +17,6 @@ func spawn_enemy_set_random_location(new_enemy):
 	var random_position_modifer: Vector2 = Vector2(randi_range(-12,21),randi_range(-15,20))
 	new_enemy.global_position = enemy_spawn_location.global_position + random_position_modifer
 	
-	#this is for debug poirposes
-	var new_enemy_position = new_enemy.position
 	#get the tile the enemy is standing on
 	var new_enemy_tile_position = tile_map.get_cell_atlas_coords(0,tile_map.local_to_map(new_enemy.position))
 	

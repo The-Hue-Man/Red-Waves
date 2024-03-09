@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cs2026svnvf7p" path="res://static_objects/tree/big_red_treev2.png" id="1_k5tlg"]
 [ext_resource type="Script" path="res://static_objects/tree/big_red_tree.gd" id="1_tsv84"]
-[ext_resource type="Texture2D" uid="uid://cummrm2rsacjw" path="res://shared/shadow.png" id="3_fh6sq"]
+[ext_resource type="Texture2D" uid="uid://cummrm2rsacjw" path="res://entities/shared/shadow.png" id="3_fh6sq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wqe6e"]
 radius = 21.0
