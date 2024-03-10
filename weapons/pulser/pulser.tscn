@@ -6,7 +6,7 @@
 [node name="Pulser" type="Node2D"]
 script = ExtResource("1_k4t0d")
 weapon_name = "Pulser"
-damage = 10
+damage = 6
 factions_targeted = Array[String](["enemy"])
 weapon_cooldown = 2.1
 attack_scene = ExtResource("2_m3u38")

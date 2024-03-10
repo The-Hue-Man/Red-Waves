@@ -12,6 +12,8 @@ var touching_player = false
 func _ready():
 	super._ready()
 	
+	
+	
 	animated_sprite_2d.play()
 	
 
@@ -24,7 +26,7 @@ func _process(delta):
 
 func _physics_process(_delta):
 	
-	target_player()
+	#target_player()
 	_move()
 	
 

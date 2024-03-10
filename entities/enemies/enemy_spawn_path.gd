@@ -30,12 +30,10 @@ func spawn_enemy_set_random_location(new_enemy):
 func spawn_enemies():
 	for enemy in enemies_spawned:
 		
-		if GameManager.enemy_count < 300:
+		if GameManager.enemy_count < 400:
 			var new_enemy = enemy.instantiate()
 			
-			var new_rand_scale = randf_range(2,3)
-			new_enemy.scale = Vector2(new_rand_scale,new_rand_scale)
-			
+			new_enemy.movement_speed += randi_range(1,20)
 			
 			spawn_enemy_set_random_location(new_enemy)
 			

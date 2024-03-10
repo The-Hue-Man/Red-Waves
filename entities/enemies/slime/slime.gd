@@ -14,7 +14,7 @@ func _ready():
 
 func _physics_process(_delta):
 	
-	target_player()
+	#target_player()
 	
 	_move()
 	

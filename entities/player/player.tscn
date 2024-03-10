@@ -115,7 +115,7 @@ _data = {
 material = SubResource("ShaderMaterial_tray3")
 script = ExtResource("1_7x1ih")
 entity_name = "Player"
-max_health = 71
+max_health = 16
 health_regeneration = 1
 invulnerable = true
 movement_speed = 105
@@ -146,13 +146,11 @@ position = Vector2(0, -8)
 
 [node name="Knife" parent="." node_paths=PackedStringArray("weapon_origin") instance=ExtResource("4_c2iee")]
 use_parent_material = true
-damage = 1
 factions_targeted = Array[String](["enemy"])
-weapon_cooldown = 0.09
 weapon_origin = NodePath("../AttackPoint")
 
 [node name="Pulser" parent="." node_paths=PackedStringArray("weapon_origin") instance=ExtResource("5_ioev0")]
-damage = 1
+damage = 0
 weapon_origin = NodePath("../AttackPoint")
 
 [node name="Flash animation" type="AnimationPlayer" parent="."]

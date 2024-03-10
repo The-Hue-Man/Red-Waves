@@ -85,6 +85,9 @@ frame_progress = 0.895591
 offset = Vector2(0, -5)
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]
+process_thread_group = 2
+process_thread_group_order = 0
+process_thread_messages = 3
 position = Vector2(1, -2.00004)
 rotation = 1.5708
 scale = Vector2(1.66157, 2.04491)
