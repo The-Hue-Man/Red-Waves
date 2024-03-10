@@ -30,7 +30,7 @@ func spawn_enemy_set_random_location(new_enemy):
 func spawn_enemies():
 	for enemy in enemies_spawned:
 		
-		if GameManager.enemy_count < 400:
+		if GameManager.enemy_count < 600:
 			var new_enemy = enemy.instantiate()
 			
 			new_enemy.movement_speed += randi_range(1,20)

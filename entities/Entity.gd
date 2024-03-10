@@ -39,17 +39,16 @@ func take_damage(damage: int):
 	current_health -= damage
 	check_health()
 
-func check_health():
+func check_health() -> bool:
 	if current_health <= 0 && invulnerable == false:
 		print(entity_name, " has died")
 		
 		call_deferred("spawn_corpse")
 		
-		if is_in_group("enemy"):
-			GameManager.enemy_count -= 1
-			GameManager.score += 1
 		queue_free()
+		return false
 		
+	return true
 
 
 func spawn_corpse():

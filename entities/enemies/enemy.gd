@@ -8,9 +8,7 @@ var target_locked: bool = false
 
 @export var enemy_sprite: AnimatedSprite2D
 @export var contact_damage:int = 1
-
-
-var neighbors: Array
+@export var score: int = 1
 
 
 func _ready():
@@ -30,12 +28,6 @@ func _ready():
 func _move():
 	velocity = direction * movement_speed
 	
-	#for i in neighbors:
-	#	if abs(i.position - GameManager.get_player_global_position()) < abs(position - GameManager.get_player_global_position()):
-	#		velocity /= 1.5
-	#	
-	
-	
 	move_and_slide()
 
 
@@ -45,7 +37,7 @@ func target_player():
 	direction = global_position.direction_to(target)
 	
 	#delete enemy if too far away from player
-	if abs(target[0] - position.x) > 550 || abs(target[1] - position.y) > 300:
+	if abs(target[0] - position.x) > 525 || abs(target[1] - position.y) > 280:
 		queue_free()
 		GameManager.enemy_count -= 1
 	
@@ -54,3 +46,10 @@ func target_player():
 		enemy_sprite.flip_h = true
 	else:
 		enemy_sprite.flip_h = false
+
+
+func check_health():
+	if !super.check_health():
+		GameManager.enemy_count -= 1
+		GameManager.score += score
+	

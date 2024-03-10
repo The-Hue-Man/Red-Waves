@@ -45,7 +45,11 @@ func movement(direction):
 
 
 
-
+func check_health():
+	if(!super.check_health()):
+		GameManager.player_death_location = global_position
+		GameManager.emit_signal("game_over")
+		
 
 
 func update_experience():

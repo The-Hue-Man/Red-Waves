@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://ui/end_screen.gd" id="1_ica2r"]
 
-[node name="Control" type="Control"]
+[node name="EndScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -48,4 +48,5 @@ text = "Restart"
 layout_mode = 2
 text = "Exit"
 
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

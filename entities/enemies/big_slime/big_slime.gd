@@ -47,8 +47,6 @@ func _on_damage_box_body_entered(body):
 
 
 func _on_damage_box_body_exited(body):
-	if body.is_in_group("enemy"):
-		neighbors.erase(body)
 	
 	if body.is_in_group("player"):
 		touching_player = false

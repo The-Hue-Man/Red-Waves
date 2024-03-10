@@ -113,12 +113,12 @@ _data = {
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("weapon_origin") groups=["PlayerGroup"]]
 material = SubResource("ShaderMaterial_tray3")
+collision_mask = 3
 script = ExtResource("1_7x1ih")
 entity_name = "Player"
-max_health = 16
+max_health = 6
 health_regeneration = 1
-invulnerable = true
-movement_speed = 105
+movement_speed = 100
 weapon_origin = NodePath("AttackPoint")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -146,6 +146,7 @@ position = Vector2(0, -8)
 
 [node name="Knife" parent="." node_paths=PackedStringArray("weapon_origin") instance=ExtResource("4_c2iee")]
 use_parent_material = true
+damage = 398
 factions_targeted = Array[String](["enemy"])
 weapon_origin = NodePath("../AttackPoint")
 
