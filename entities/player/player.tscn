@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://jw6wvouvwwfk"]
+[gd_scene load_steps=21 format=3 uid="uid://jw6wvouvwwfk"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_7x1ih"]
 [ext_resource type="Shader" path="res://entities/player/flash.gdshader" id="1_nt3yf"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://br4j6hhtmx8o1" path="res://entities/player/abbcharanim.png" id="2_bejfm"]
 [ext_resource type="PackedScene" uid="uid://bpxnrw6kf17pd" path="res://weapons/knife/knife.tscn" id="4_c2iee"]
 [ext_resource type="PackedScene" uid="uid://0c7wvly2w048" path="res://weapons/pulser/pulser.tscn" id="5_ioev0"]
+[ext_resource type="AudioStream" uid="uid://c30x2kr6yf588" path="res://sounds/Ow.wav" id="7_an5kh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tray3"]
 resource_local_to_scene = true
@@ -116,8 +117,9 @@ material = SubResource("ShaderMaterial_tray3")
 collision_mask = 3
 script = ExtResource("1_7x1ih")
 entity_name = "Player"
-max_health = 6
+max_health = 16
 health_regeneration = 1
+invulnerable = true
 movement_speed = 100
 weapon_origin = NodePath("AttackPoint")
 
@@ -144,14 +146,16 @@ offset = Vector2(0, -9)
 unique_name_in_owner = true
 position = Vector2(0, -8)
 
-[node name="Knife" parent="." node_paths=PackedStringArray("weapon_origin") instance=ExtResource("4_c2iee")]
+[node name="Knife" parent="." node_paths=PackedStringArray("weapon_owner", "weapon_origin") instance=ExtResource("4_c2iee")]
 use_parent_material = true
-damage = 398
+weapon_owner = NodePath("..")
+damage = 33
+area = 5.425
 factions_targeted = Array[String](["enemy"])
 weapon_origin = NodePath("../AttackPoint")
 
-[node name="Pulser" parent="." node_paths=PackedStringArray("weapon_origin") instance=ExtResource("5_ioev0")]
-damage = 0
+[node name="Pulser" parent="." node_paths=PackedStringArray("weapon_owner", "weapon_origin") instance=ExtResource("5_ioev0")]
+weapon_owner = NodePath("..")
 weapon_origin = NodePath("../AttackPoint")
 
 [node name="Flash animation" type="AnimationPlayer" parent="."]
@@ -159,3 +163,7 @@ unique_name_in_owner = true
 libraries = {
 "": SubResource("AnimationLibrary_v5gkj")
 }
+
+[node name="Hitsound" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_an5kh")

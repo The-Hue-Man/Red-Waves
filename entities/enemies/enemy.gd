@@ -50,6 +50,6 @@ func target_player():
 
 func check_health():
 	if !super.check_health():
-		GameManager.enemy_count -= 1
+		GameManager.on_enemy_death(global_position)
 		GameManager.score += score
 	

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://0c7wvly2w048"]
+[gd_scene load_steps=4 format=3 uid="uid://0c7wvly2w048"]
 
 [ext_resource type="Script" path="res://weapons/pulser/pulser.gd" id="1_k4t0d"]
 [ext_resource type="PackedScene" uid="uid://k5h7vufdgced" path="res://weapons/attacks/pulse/pulse.tscn" id="2_m3u38"]
+[ext_resource type="AudioStream" uid="uid://bur2wjsaij2dr" path="res://sounds/stab.wav" id="3_nnjcc"]
 
 [node name="Pulser" type="Node2D"]
 script = ExtResource("1_k4t0d")
@@ -13,5 +14,11 @@ attack_scene = ExtResource("2_m3u38")
 
 [node name="Cooldown" type="Timer" parent="."]
 unique_name_in_owner = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_nnjcc")
+volume_db = -40.0
+pitch_scale = 3.47
 
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

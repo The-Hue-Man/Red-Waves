@@ -1,6 +1,7 @@
 extends Weapon
 
 @onready var pulse_cooldown = %Cooldown
+@onready var audio_stream_player_2d = %AudioStreamPlayer2D
 
 
 func _ready():
@@ -12,9 +13,11 @@ func _ready():
 func attack(attack_origin:Marker2D,target:Vector2,input_area:float):
 	
 	var new_attack = attack_scene.instantiate()
-	new_attack.scale = Vector2(input_area,input_area)
+	new_attack.scale += Vector2(weapon_owner.weapon_scale,weapon_owner.weapon_scale) / 10
 	new_attack.factions_targeted.assign(factions_targeted)
-	new_attack.damage = damage
+	new_attack.damage = damage + weapon_owner.damage_bonus / 8
+	
+	audio_stream_player_2d.play()
 	
 	get_parent().add_child(new_attack)
 	

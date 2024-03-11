@@ -4,6 +4,8 @@ extends Node
 @onready var player = get_tree().get_nodes_in_group("PlayerGroup")[0]
 @onready var player_coordinates = get_tree().get_nodes_in_group("PlayerGroup")[0].global_position
 
+
+
 var player_death_location:Vector2
 
 signal game_over
@@ -14,6 +16,7 @@ var score: int = 0
 
 #timer stuff
 signal timeout
+signal enemy_death
 
 const ENEMY_UPDATE_TIME_PERIOD = 0.3
 var enemy_update_time = 0
@@ -24,7 +27,10 @@ func _ready():
 func _process(delta):
 	update_enemy_timer(delta)
 	
-	
+
+func on_enemy_death(death_position : Vector2):
+	enemy_count -= 1
+	emit_signal("enemy_death", death_position)
 
 func update_enemy_timer(delta):
 	enemy_update_time += delta
@@ -42,12 +48,6 @@ func is_player_alive() -> bool:
 		return true
 	else:
 		return false
-
-
-
-
-
-
 
 
 func get_player_global_position() -> Vector2:

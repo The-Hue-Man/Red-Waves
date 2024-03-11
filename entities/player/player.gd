@@ -5,11 +5,16 @@ extends Entity
 
 @onready var animated_sprite_2d = %AnimatedSprite2D
 @onready var flash_animation = %"Flash animation"
+@onready var hit_sound = %Hitsound
+
 
 var current_experience:int = 0
 
 var current_level:int = 1
 
+var weapon_scale: float = 1
+
+var damage_bonus:int = 0
 
 func _ready():
 	#Calls the Entity class Ready function
@@ -72,14 +77,27 @@ func experience_needed(level) -> int:
 
 func levelup():
 	current_level += 1
-	
-	
 	print("player has levelled up to level ", current_level)
+	
+	max_health += randi_range(5,10)
+	movement_speed += randi_range(0,5)
+	weapon_scale += randf_range(.1,.3)
+	damage_bonus += randi_range(1,3)
+	
+	
+	
+	current_health = max_health
+	
+	
 
 
 func take_damage(damage: int):
 	super.take_damage(damage)
 	flash_animation.play("flash")
+	
+	hit_sound.pitch_scale = randf_range(.2,3)
+	hit_sound.volume_db = randf_range(-7,7)
+	hit_sound.play()
 
 
 func get_level()-> int:

@@ -1,6 +1,7 @@
 class_name Weapon
 extends Node2D
 
+@export var weapon_owner: Player
 
 @export var weapon_name:String
 @export var damage:int

@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://hbgtattk8upt"]
+[gd_scene load_steps=14 format=3 uid="uid://hbgtattk8upt"]
 
 [ext_resource type="PackedScene" uid="uid://cpmcxta1lrmst" path="res://tilesets/tile_map.tscn" id="1_addwt"]
 [ext_resource type="PackedScene" uid="uid://jw6wvouvwwfk" path="res://entities/player/player.tscn" id="1_ci8gl"]
+[ext_resource type="Script" path="res://main.gd" id="1_wtlb5"]
 [ext_resource type="Shader" path="res://entities/player/flash.gdshader" id="2_up8ij"]
 [ext_resource type="PackedScene" uid="uid://3ahcv24obb5n" path="res://entities/enemies/slime/slime.tscn" id="3_k852e"]
 [ext_resource type="PackedScene" uid="uid://dveysy1ncdv5y" path="res://static_objects/tree/big_red_tree.tscn" id="4_3otkt"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bwusi8cl1dq2t" path="res://entities/enemies/enemy_spawn_path.tscn" id="6_w12l0"]
 [ext_resource type="Script" path="res://ui/ui_root.gd" id="8_6wv44"]
 [ext_resource type="PackedScene" uid="uid://ejlfi1ow2ugj" path="res://ui/end_screen.tscn" id="8_ycpgi"]
+[ext_resource type="AudioStream" uid="uid://brtdy2cqfqg3i" path="res://sounds/death.wav" id="12_5575v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kivws"]
 resource_local_to_scene = true
@@ -19,6 +21,7 @@ shader_parameter/flash_modifer = 0.0
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_wtlb5")
 
 [node name="Player" parent="." instance=ExtResource("1_ci8gl")]
 material = SubResource("ShaderMaterial_kivws")
@@ -140,3 +143,7 @@ end_screen = NodePath("EndScreen")
 
 [node name="EndScreen" parent="UIRoot" instance=ExtResource("8_ycpgi")]
 visible = false
+
+[node name="EnemyDeathSounds" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("12_5575v")

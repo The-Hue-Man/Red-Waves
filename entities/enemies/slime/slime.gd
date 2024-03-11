@@ -23,3 +23,4 @@ func _physics_process(_delta):
 func _on_damage_box_body_entered(body):
 	if body.is_in_group("player"):
 		body.take_damage(contact_damage)
+

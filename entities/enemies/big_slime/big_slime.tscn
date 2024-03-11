@@ -70,7 +70,7 @@ enemy_sprite = NodePath("AnimatedSprite2D")
 contact_damage = 6
 score = 4
 entity_name = "Big Slime"
-max_health = 24
+max_health = 49
 movement_speed = 40
 experience_contained = 745
 

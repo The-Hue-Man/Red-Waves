@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4awn5c54kbs6"]
+[gd_scene load_steps=12 format=3 uid="uid://c4awn5c54kbs6"]
 
 [ext_resource type="Script" path="res://weapons/attacks/stab/stab.gd" id="1_ww50i"]
 [ext_resource type="Texture2D" uid="uid://dwvfylau65uxu" path="res://weapons/attacks/stab/knife-sheet.png" id="2_ab4e4"]
+[ext_resource type="AudioStream" uid="uid://0mlhg1ha7bos" path="res://sounds/hit.wav" id="3_vaknf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e105o"]
 radius = 4.00058
@@ -81,6 +82,11 @@ position = Vector2(12, 0)
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_41huf")
 frame_progress = 0.45492
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_vaknf")
+pitch_scale = 3.59
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Duration" to="." method="_on_duration_timeout"]
