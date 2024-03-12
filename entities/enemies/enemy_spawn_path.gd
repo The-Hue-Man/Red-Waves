@@ -123,14 +123,15 @@ var spawn_dict = {
 func _ready():
 	set_spawn_rules(current_spawn_level)
 
-
+ 
 func _process(delta: float) -> void:
 	
 	time_since_game_start += delta
 	
-	if time_since_game_start > prev_spawn_time + 1:
+	if time_since_game_start > prev_spawn_time + 35:
 		prev_spawn_time = time_since_game_start
 		current_spawn_level += 1
+		print("GameState ", current_spawn_level, " has been reached")
 		set_spawn_rules(current_spawn_level)
 
 func set_spawn_rules(spawn_level):
@@ -186,7 +187,7 @@ func spawn_enemies():
 			new_enemy.movement_speed += randi_range(1,20)
 			
 			new_enemy.contact_damage *= enemy_stat_multiplier
-			new_enemy.current_health *= enemy_stat_multiplier
+			new_enemy.current_health *= (enemy_stat_multiplier * 2)
 			
 			spawn_enemy_set_random_location(new_enemy)
 			

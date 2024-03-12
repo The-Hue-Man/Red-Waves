@@ -121,9 +121,8 @@ collision_mask = 7
 collision_priority = 6.03
 script = ExtResource("1_7x1ih")
 entity_name = "Player"
-max_health = 31
+max_health = 5
 health_regeneration = 1
-invulnerable = true
 movement_speed = 100
 weapon_origin = NodePath("AttackPoint")
 

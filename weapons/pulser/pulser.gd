@@ -4,11 +4,17 @@ extends Weapon
 @onready var audio_stream_player_2d = %AudioStreamPlayer2D
 
 
+
+
 func _ready():
 	super._ready()
 	
-	pulse_cooldown.set_wait_time(weapon_cooldown)
-	pulse_cooldown.start()
+	GameManager.connect("player_levelled_up", _on_player_level_up)
+	
+
+
+
+
 
 func attack(attack_origin:Marker2D,target:Vector2,input_area:float):
 	
@@ -22,6 +28,11 @@ func attack(attack_origin:Marker2D,target:Vector2,input_area:float):
 	get_parent().add_child(new_attack)
 	
 	pulse_cooldown.start()
+
+func _on_player_level_up():
+	if weapon_owner.current_level == 25:
+		pulse_cooldown.set_wait_time(weapon_cooldown)
+		pulse_cooldown.start()
 
 
 func _on_cooldown_timeout():

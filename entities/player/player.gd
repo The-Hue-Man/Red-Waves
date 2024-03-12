@@ -88,6 +88,8 @@ func levelup():
 	current_level += 1
 	print("player has levelled up to level ", current_level)
 	
+	GameManager.emit_signal("player_levelled_up")
+	
 	max_health += randi_range(5,10)
 	movement_speed += randi_range(0,5)
 	weapon_scale += randf_range(.1,.3)

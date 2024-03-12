@@ -5,6 +5,7 @@ extends Node
 @onready var player_coordinates = get_tree().get_nodes_in_group("PlayerGroup")[0].global_position
 
 
+signal player_levelled_up
 
 var player_death_location:Vector2
 

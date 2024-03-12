@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://hbgtattk8upt"]
+[gd_scene load_steps=17 format=3 uid="uid://hbgtattk8upt"]
 
 [ext_resource type="PackedScene" uid="uid://cpmcxta1lrmst" path="res://tilesets/tile_map.tscn" id="1_addwt"]
 [ext_resource type="PackedScene" uid="uid://jw6wvouvwwfk" path="res://entities/player/player.tscn" id="1_ci8gl"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://brtdy2cqfqg3i" path="res://sounds/death.wav" id="12_5575v"]
 [ext_resource type="AudioStream" uid="uid://b7yajxtctnbr7" path="res://sounds/music/offtrack_intro.wav" id="13_r7xlf"]
 [ext_resource type="AudioStream" uid="uid://dxi4vwamd8rth" path="res://sounds/music/offtrack_loopfinal.wav" id="14_i4bgb"]
+[ext_resource type="PackedScene" uid="uid://cdlcwobseo370" path="res://static_objects/see_tree/see_tree.tscn" id="15_pdwmp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kivws"]
 resource_local_to_scene = true
@@ -62,14 +63,26 @@ position = Vector2(929, 503)
 [node name="Tree9" parent="Trees" instance=ExtResource("4_3otkt")]
 position = Vector2(73, 730)
 
+[node name="Tree39" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(1117, 1270)
+
+[node name="Tree40" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(1075, 1246)
+
+[node name="Tree41" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(1208, 1209)
+
 [node name="Tree10" parent="Trees" instance=ExtResource("4_3otkt")]
 position = Vector2(619, 290)
 
 [node name="Tree" parent="Trees" instance=ExtResource("4_3otkt")]
-position = Vector2(391, 102)
+position = Vector2(-327, -261)
+
+[node name="Tree31" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(-160, -487)
 
 [node name="Tree2" parent="Trees" instance=ExtResource("4_3otkt")]
-position = Vector2(55, 210)
+position = Vector2(63, 234)
 
 [node name="Tree3" parent="Trees" instance=ExtResource("4_3otkt")]
 position = Vector2(395, 280)
@@ -78,7 +91,7 @@ position = Vector2(395, 280)
 position = Vector2(486, 138)
 
 [node name="Tree5" parent="Trees" instance=ExtResource("4_3otkt")]
-position = Vector2(85, 67)
+position = Vector2(7, -184)
 
 [node name="Tree11" parent="Trees" instance=ExtResource("4_3otkt")]
 position = Vector2(-241, 1582)
@@ -90,7 +103,7 @@ position = Vector2(710, 1391)
 position = Vector2(172, 990)
 
 [node name="Tree14" parent="Trees" instance=ExtResource("4_3otkt")]
-position = Vector2(267, 1026)
+position = Vector2(990, 1138)
 
 [node name="Tree15" parent="Trees" instance=ExtResource("4_3otkt")]
 position = Vector2(1234, 875)
@@ -120,10 +133,10 @@ position = Vector2(-480, 529)
 position = Vector2(-588, 1435)
 
 [node name="Tree24" parent="Trees" instance=ExtResource("4_3otkt")]
-position = Vector2(363, 1244)
+position = Vector2(254, 1463)
 
 [node name="Tree25" parent="Trees" instance=ExtResource("4_3otkt")]
-position = Vector2(137, 1266)
+position = Vector2(618, 1135)
 
 [node name="Tree26" parent="Trees" instance=ExtResource("4_3otkt")]
 position = Vector2(-80, 879)
@@ -139,6 +152,27 @@ position = Vector2(1202, 489)
 
 [node name="Tree30" parent="Trees" instance=ExtResource("4_3otkt")]
 position = Vector2(699, 174)
+
+[node name="Tree32" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(427, 1532)
+
+[node name="Tree33" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(-111, 1131)
+
+[node name="Tree34" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(576, 1111)
+
+[node name="Tree35" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(951, 1016)
+
+[node name="Tree36" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(709, 1074)
+
+[node name="Tree37" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(-153, 1614)
+
+[node name="Tree38" parent="Trees" instance=ExtResource("4_3otkt")]
+position = Vector2(-139, 1508)
 
 [node name="UIRoot" type="CanvasLayer" parent="." node_paths=PackedStringArray("end_screen")]
 script = ExtResource("8_6wv44")
@@ -162,12 +196,30 @@ mix_target = 1
 [node name="LoopPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("14_i4bgb")
-mix_target = 1
+volume_db = -3.0
 
 [node name="EnemiesStartSpawning" type="Timer" parent="."]
 wait_time = 10.7
 one_shot = true
 autostart = true
+
+[node name="Tree" parent="." instance=ExtResource("15_pdwmp")]
+position = Vector2(-766, 392)
+
+[node name="Tree2" parent="." instance=ExtResource("15_pdwmp")]
+position = Vector2(1308, 463)
+
+[node name="Tree3" parent="." instance=ExtResource("15_pdwmp")]
+position = Vector2(-537, -441)
+
+[node name="Tree4" parent="." instance=ExtResource("15_pdwmp")]
+position = Vector2(-447, -380)
+
+[node name="Tree5" parent="." instance=ExtResource("15_pdwmp")]
+position = Vector2(-387, -479)
+
+[node name="Tree6" parent="." instance=ExtResource("15_pdwmp")]
+position = Vector2(-288, 1176)
 
 [connection signal="finished" from="IntroPlayer" to="." method="_on_intro_player_finished"]
 [connection signal="timeout" from="EnemiesStartSpawning" to="." method="_on_enemies_start_spawning_timeout"]
