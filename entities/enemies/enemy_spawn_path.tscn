@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwusi8cl1dq2t"]
+[gd_scene load_steps=5 format=3 uid="uid://bwusi8cl1dq2t"]
 
 [ext_resource type="Script" path="res://entities/enemies/enemy_spawn_path.gd" id="1_qeagp"]
+[ext_resource type="PackedScene" uid="uid://3ahcv24obb5n" path="res://entities/enemies/slime/slime.tscn" id="2_8xvml"]
+[ext_resource type="PackedScene" uid="uid://bksw3rfrgifsc" path="res://entities/enemies/big_slime/big_slime.tscn" id="3_0yum6"]
 
 [sub_resource type="Curve2D" id="Curve2D_4dnt6"]
 _data = {
@@ -11,6 +13,8 @@ point_count = 9
 [node name="EnemySpawnPath" type="Path2D"]
 curve = SubResource("Curve2D_4dnt6")
 script = ExtResource("1_qeagp")
+small_slime_scene = ExtResource("2_8xvml")
+big_slime_scene = ExtResource("3_0yum6")
 
 [node name="EnemySpawnLocation" type="PathFollow2D" parent="."]
 unique_name_in_owner = true
@@ -18,6 +22,7 @@ position = Vector2(680, -40)
 rotation = -3.03094
 
 [node name="SpawnTimer" type="Timer" parent="."]
+unique_name_in_owner = true
 wait_time = 0.05
 autostart = true
 

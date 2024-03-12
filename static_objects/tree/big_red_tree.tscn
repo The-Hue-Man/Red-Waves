@@ -3,10 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cs2026svnvf7p" path="res://static_objects/tree/big_red_treev2.png" id="1_k5tlg"]
 [ext_resource type="Script" path="res://static_objects/tree/big_red_tree.gd" id="1_tsv84"]
 [ext_resource type="Texture2D" uid="uid://cummrm2rsacjw" path="res://entities/shared/shadow.png" id="3_fh6sq"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wqe6e"]
-radius = 21.0
-height = 56.0
+[ext_resource type="PackedScene" uid="uid://c1hpc64488bnx" path="res://static_objects/seethrough_detection.tscn" id="4_autwm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2se1y"]
 radius = 5.0
@@ -25,13 +22,8 @@ unique_name_in_owner = true
 texture = ExtResource("1_k5tlg")
 offset = Vector2(3, -27)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" parent="." instance=ExtResource("4_autwm")]
 unique_name_in_owner = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -44)
-rotation = 1.5708
-shape = SubResource("CapsuleShape2D_wqe6e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var enemy_death_sounds = %EnemyDeathSounds
 @onready var loop_player = %LoopPlayer
+@onready var enemy_spawn_path = %EnemySpawnPath
 
 
 
@@ -21,5 +22,5 @@ func _on_enemy_death(death_position):
 
 
 func _on_intro_player_finished():
-	
+	enemy_spawn_path.ready_to_spawn_enemies = true
 	loop_player.play()

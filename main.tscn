@@ -30,6 +30,7 @@ material = SubResource("ShaderMaterial_kivws")
 position = Vector2(420, 175)
 
 [node name="EnemySpawnPath" parent="Player" node_paths=PackedStringArray("tile_map") instance=ExtResource("6_w12l0")]
+unique_name_in_owner = true
 position = Vector2(-337, -160)
 tile_map = NodePath("../../TileMap")
 enemies_spawned = Array[PackedScene]([ExtResource("3_k852e"), ExtResource("3_k852e"), ExtResource("5_jwhah")])
