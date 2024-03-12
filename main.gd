@@ -5,7 +5,6 @@ extends Node2D
 @onready var enemy_spawn_path = %EnemySpawnPath
 
 
-
 func _ready():
 	GameManager.connect("enemy_death", _on_enemy_death)
 
@@ -22,5 +21,8 @@ func _on_enemy_death(death_position):
 
 
 func _on_intro_player_finished():
-	enemy_spawn_path.ready_to_spawn_enemies = true
 	loop_player.play()
+
+
+func _on_enemies_start_spawning_timeout():
+	enemy_spawn_path.ready_to_spawn_enemies = true

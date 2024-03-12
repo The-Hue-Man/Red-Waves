@@ -64,13 +64,17 @@ attack={
 [physics]
 
 2d/run_on_separate_thread=true
-2d/solver/solver_iterations=14
-2d/solver/contact_recycle_radius=1.2
-2d/solver/contact_max_separation=1.4
+common/max_physics_steps_per_frame=6
+2d/solver/solver_iterations=1
+2d/solver/contact_recycle_radius=4.0
+2d/solver/contact_max_separation=0.8
+2d/solver/contact_max_allowed_penetration=0.6
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
+driver/depth_prepass/enable=false
 2d/snap/snap_2d_transforms_to_pixel=true
 2d/snap/snap_2d_vertices_to_pixel=true
+2d/sdf/oversize=0

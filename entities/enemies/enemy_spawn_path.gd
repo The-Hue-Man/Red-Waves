@@ -18,31 +18,106 @@ var current_spawn_level = 1
 
 var prev_spawn_time = 0
 
+var enemy_stat_multiplier = 1.0
+
 var spawn_dict = {
 	"1" : {
 		"spawn_rate"  : 1.5,
 		"small_slimes" : 3,
-		"big_slimes" : 0
+		"big_slimes" : 0,
+		"enemy_stat_multiplier" : 1.0
 	},
 	
 	"2" : {
 		"spawn_rate"  : 1.5,
 		"small_slimes" : 2,
-		"big_slimes" : 1
+		"big_slimes" : 1,
+		"enemy_stat_multiplier" : 1.0
 	},
 	
 	"3" : {
 		"spawn_rate"  : 1.6,
 		"small_slimes" : 3,
-		"big_slimes" : 1
+		"big_slimes" : 1,
+		"enemy_stat_multiplier" : 1.1
 	},
 	
 	"4" : {
 		"spawn_rate"  : 1.6,
 		"small_slimes" : 3,
-		"big_slimes" : 2
+		"big_slimes" : 2,
+		"enemy_stat_multiplier" : 1.3
 	},
 	
+	"5" : {
+		"spawn_rate"  : 1.6,
+		"small_slimes" : 7,
+		"big_slimes" : 1,
+		"enemy_stat_multiplier" : 1.8
+	},
+	
+	"6" : {
+		"spawn_rate"  : 1.5,
+		"small_slimes" : 1,
+		"big_slimes" : 4,
+		"enemy_stat_multiplier" : 2.0
+	},
+	
+	"7" : {
+		"spawn_rate"  : 1.4,
+		"small_slimes" : 3,
+		"big_slimes" : 4,
+		"enemy_stat_multiplier" : 2.0
+	},
+	
+	"8" : {
+		"spawn_rate"  : 1.2,
+		"small_slimes" : 3,
+		"big_slimes" : 6,
+		"enemy_stat_multiplier" : 2.3
+	},
+	
+	"9" : {
+		"spawn_rate"  : 1.0,
+		"small_slimes" : 5,
+		"big_slimes" : 3,
+		"enemy_stat_multiplier" : 2.5
+	},
+	
+	"10" : {
+		"spawn_rate"  : .8,
+		"small_slimes" : 5,
+		"big_slimes" : 3,
+		"enemy_stat_multiplier" : 2.6
+	},
+	
+	"11" : {
+		"spawn_rate"  : .5,
+		"small_slimes" : 1,
+		"big_slimes" : 6,
+		"enemy_stat_multiplier" : 2.7
+	},
+	
+	"12" : {
+		"spawn_rate"  : .4,
+		"small_slimes" : 9,
+		"big_slimes" : 0,
+		"enemy_stat_multiplier" : 2.8
+	},
+	
+	"13" : {
+		"spawn_rate"  : .2,
+		"small_slimes" : 4,
+		"big_slimes" : 5,
+		"enemy_stat_multiplier" : 2.9
+	},
+	
+	"14" : {
+		"spawn_rate"  : .1,
+		"small_slimes" : 5,
+		"big_slimes" : 5,
+		"enemy_stat_multiplier" : 3.0
+	},
 }
 
 func _ready():
@@ -53,7 +128,7 @@ func _process(delta: float) -> void:
 	
 	time_since_game_start += delta
 	
-	if time_since_game_start > prev_spawn_time + 5:
+	if time_since_game_start > prev_spawn_time + 1:
 		prev_spawn_time = time_since_game_start
 		current_spawn_level += 1
 		set_spawn_rules(current_spawn_level)
@@ -66,7 +141,7 @@ func set_spawn_rules(spawn_level):
 	
 	enemies_spawned.clear()
 	
-	
+	enemy_stat_multiplier = spawn_dict.get(str(spawn_level)).get("enemy_stat_multiplier")
 	
 	var small_slime_amount = spawn_dict.get(str(spawn_level)).get("small_slimes")
 	var big_slime_amount = spawn_dict.get(str(spawn_level)).get("big_slimes")
@@ -109,6 +184,9 @@ func spawn_enemies():
 			var new_enemy = enemy.instantiate()
 			
 			new_enemy.movement_speed += randi_range(1,20)
+			
+			new_enemy.contact_damage *= enemy_stat_multiplier
+			new_enemy.current_health *= enemy_stat_multiplier
 			
 			spawn_enemy_set_random_location(new_enemy)
 			

@@ -29,6 +29,15 @@ func _physics_process(_delta):
 	movement(_get_move_input())
 
 
+func _process(delta):
+	
+	for a in $PickupRange.get_overlapping_areas():
+		if a.is_in_group("corpse"):
+			add_experience(a.experience_contained)
+			a.queue_free()
+	
+
+
 func _get_move_input() -> Vector2:
 	var vertical = Input.get_axis("up", "down")
 	var horizontal = Input.get_axis("left", "right")
@@ -102,3 +111,4 @@ func take_damage(damage: int):
 
 func get_level()-> int:
 	return current_level
+

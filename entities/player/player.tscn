@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://jw6wvouvwwfk"]
+[gd_scene load_steps=22 format=3 uid="uid://jw6wvouvwwfk"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_7x1ih"]
 [ext_resource type="Shader" path="res://entities/player/flash.gdshader" id="1_nt3yf"]
@@ -112,13 +112,16 @@ _data = {
 "flash": SubResource("Animation_0q815")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ypjx"]
+radius = 14.0
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("weapon_origin") groups=["PlayerGroup"]]
 material = SubResource("ShaderMaterial_tray3")
-collision_mask = 3
+collision_mask = 7
 collision_priority = 6.03
 script = ExtResource("1_7x1ih")
 entity_name = "Player"
-max_health = 16
+max_health = 31
 health_regeneration = 1
 invulnerable = true
 movement_speed = 100
@@ -168,3 +171,9 @@ libraries = {
 [node name="Hitsound" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("7_an5kh")
+
+[node name="PickupRange" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupRange"]
+shape = SubResource("CircleShape2D_7ypjx")
