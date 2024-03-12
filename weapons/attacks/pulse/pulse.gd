@@ -14,7 +14,8 @@ func _ready():
 
 func _on_body_entered(body):
 	
-	
+	audio_stream_player_2d.pitch_scale = randf_range(.9,1.2)
+	audio_stream_player_2d.volume_db = randf_range(-32,-10)
 	audio_stream_player_2d.play()
 	
 	for group in factions_targeted:

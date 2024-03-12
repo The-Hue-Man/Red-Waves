@@ -13,6 +13,8 @@ func attack(attack_origin:Marker2D,target:Vector2,input_area:float):
 	new_attack.position = attack_origin.position
 	new_attack.look_at(target)
 	
+	audio_stream_player_2d.pitch_scale = randf_range(2.9,3.9)
+	audio_stream_player_2d.volume_db = randf_range(-40,-36)
 	audio_stream_player_2d.play()
 	
 	new_attack.scale = Vector2(weapon_owner.weapon_scale,weapon_owner.weapon_scale)
