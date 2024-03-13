@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://hbgtattk8upt"]
+[gd_scene load_steps=18 format=3 uid="uid://hbgtattk8upt"]
 
 [ext_resource type="PackedScene" uid="uid://cpmcxta1lrmst" path="res://tilesets/tile_map.tscn" id="1_addwt"]
 [ext_resource type="PackedScene" uid="uid://jw6wvouvwwfk" path="res://entities/player/player.tscn" id="1_ci8gl"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://b7yajxtctnbr7" path="res://sounds/music/offtrack_intro.wav" id="13_r7xlf"]
 [ext_resource type="AudioStream" uid="uid://dbsssgbk2r1w4" path="res://sounds/music/hope.wav" id="15_cl731"]
 [ext_resource type="PackedScene" uid="uid://cdlcwobseo370" path="res://static_objects/see_tree/see_tree.tscn" id="15_pdwmp"]
+[ext_resource type="PackedScene" uid="uid://dyxkr3hnc8e0y" path="res://entities/enemies/biggest_slime/biggest_slime.tscn" id="16_jt1p4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kivws"]
 resource_local_to_scene = true
@@ -221,6 +222,9 @@ volume_db = -3.0
 wait_time = 10.7
 one_shot = true
 autostart = true
+
+[node name="BiggestSlime" parent="." instance=ExtResource("16_jt1p4")]
+position = Vector2(-55, -372)
 
 [connection signal="finished" from="IntroPlayer" to="." method="_on_intro_player_finished"]
 [connection signal="timeout" from="EnemiesStartSpawning" to="." method="_on_enemies_start_spawning_timeout"]

@@ -1,0 +1,119 @@
+[gd_scene load_steps=14 format=3 uid="uid://dyxkr3hnc8e0y"]
+
+[ext_resource type="Script" path="res://entities/enemies/biggest_slime/biggest_slime.gd" id="1_lhyo2"]
+[ext_resource type="Texture2D" uid="uid://cummrm2rsacjw" path="res://entities/shared/shadow.png" id="2_qjwsg"]
+[ext_resource type="Texture2D" uid="uid://dsmyhr1m3buk3" path="res://entities/enemies/biggest_slime/biggest_slimev3.png" id="3_pqwnr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qprmi"]
+atlas = ExtResource("3_pqwnr")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc5br"]
+atlas = ExtResource("3_pqwnr")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nd8qu"]
+atlas = ExtResource("3_pqwnr")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwghp"]
+atlas = ExtResource("3_pqwnr")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5xqe"]
+atlas = ExtResource("3_pqwnr")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vg2se"]
+atlas = ExtResource("3_pqwnr")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sa5n5"]
+atlas = ExtResource("3_pqwnr")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sddu3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qprmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc5br")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nd8qu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwghp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5xqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vg2se")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sa5n5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lh8wm"]
+size = Vector2(7.22212, 14.6706)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_drryh"]
+radius = 18.3919
+height = 57.1504
+
+[node name="BiggestSlime" type="CharacterBody2D" node_paths=PackedStringArray("enemy_sprite")]
+collision_layer = 3
+collision_mask = 7
+script = ExtResource("1_lhyo2")
+enemy_sprite = NodePath("AnimatedSprite2D")
+contact_damage = 12
+score = 1000
+entity_name = "BigBoi"
+max_health = 300
+movement_speed = 35
+faction = "enemy"
+experience_contained = 10000
+
+[node name="Shadow" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+scale = Vector2(2.51, 2.51)
+texture = ExtResource("2_qjwsg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_sddu3")
+frame_progress = 0.152334
+offset = Vector2(0, -23.72)
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+process_thread_group = 2
+process_thread_group_order = 0
+process_thread_messages = 3
+position = Vector2(1, -2.00004)
+rotation = 1.5708
+scale = Vector2(1.66157, 2.04491)
+shape = SubResource("RectangleShape2D_lh8wm")
+
+[node name="Damage_box" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage_box"]
+position = Vector2(1.59162e-12, -10)
+rotation = 1.5708
+scale = Vector2(1.46804, 1.81976)
+shape = SubResource("CapsuleShape2D_drryh")
+
+[node name="DamageTimer" type="Timer" parent="Damage_box"]
+unique_name_in_owner = true
+wait_time = 0.7
+one_shot = true
+
+[connection signal="body_entered" from="Damage_box" to="." method="_on_damage_box_body_entered"]
+[connection signal="body_exited" from="Damage_box" to="." method="_on_damage_box_body_exited"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwusi8cl1dq2t"]
+[gd_scene load_steps=6 format=3 uid="uid://bwusi8cl1dq2t"]
 
 [ext_resource type="Script" path="res://entities/enemies/enemy_spawn_path.gd" id="1_qeagp"]
 [ext_resource type="PackedScene" uid="uid://3ahcv24obb5n" path="res://entities/enemies/slime/slime.tscn" id="2_8xvml"]
 [ext_resource type="PackedScene" uid="uid://bksw3rfrgifsc" path="res://entities/enemies/big_slime/big_slime.tscn" id="3_0yum6"]
+[ext_resource type="PackedScene" uid="uid://dyxkr3hnc8e0y" path="res://entities/enemies/biggest_slime/biggest_slime.tscn" id="4_pyulr"]
 
 [sub_resource type="Curve2D" id="Curve2D_4dnt6"]
 _data = {
@@ -15,6 +16,7 @@ curve = SubResource("Curve2D_4dnt6")
 script = ExtResource("1_qeagp")
 small_slime_scene = ExtResource("2_8xvml")
 big_slime_scene = ExtResource("3_0yum6")
+biggest_slime_scene = ExtResource("4_pyulr")
 
 [node name="EnemySpawnLocation" type="PathFollow2D" parent="."]
 unique_name_in_owner = true
