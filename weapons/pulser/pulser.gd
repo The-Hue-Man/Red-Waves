@@ -30,7 +30,7 @@ func attack(attack_origin:Marker2D,target:Vector2,input_area:float):
 	pulse_cooldown.start()
 
 func _on_player_level_up():
-	if weapon_owner.current_level == 25:
+	if weapon_owner.current_level == 22:
 		pulse_cooldown.set_wait_time(weapon_cooldown)
 		pulse_cooldown.start()
 

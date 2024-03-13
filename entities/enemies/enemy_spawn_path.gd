@@ -158,6 +158,20 @@ var spawn_dict = {
 		"big_slimes" : 5,
 		"enemy_stat_multiplier" : 3.5
 	},
+	
+	"21" : {
+		"spawn_rate"  : .1,
+		"small_slimes" : 10,
+		"big_slimes" : 0,
+		"enemy_stat_multiplier" : 9
+	},
+	
+	"22" : {
+		"spawn_rate"  : .1,
+		"small_slimes" : 0,
+		"big_slimes" : 7,
+		"enemy_stat_multiplier" : 5.4
+	},
 }
 
 func _ready():
@@ -176,7 +190,7 @@ func _process(delta: float) -> void:
 
 func set_spawn_rules(spawn_level):
 	if spawn_dict.size() < spawn_level:
-		return
+		enemy_stat_multiplier += .8
 		
 	spawn_timer.set_wait_time(spawn_dict.get(str(spawn_level)).get("spawn_rate"))
 	

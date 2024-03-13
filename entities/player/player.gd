@@ -94,9 +94,9 @@ func levelup():
 	GameManager.emit_signal("player_levelled_up")
 	
 	max_health += randi_range(3,6)
-	movement_speed += randi_range(0,4)
+	movement_speed += randi_range(0,2)
 	weapon_scale += randf_range(.1,.2)
-	damage_bonus += randi_range(1,2)
+	damage_bonus += 2
 	
 	
 	current_health = max_health

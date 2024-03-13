@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ejlfi1ow2ugj" path="res://ui/end_screen.tscn" id="8_ycpgi"]
 [ext_resource type="AudioStream" uid="uid://brtdy2cqfqg3i" path="res://sounds/death.wav" id="12_5575v"]
 [ext_resource type="AudioStream" uid="uid://b7yajxtctnbr7" path="res://sounds/music/offtrack_intro.wav" id="13_r7xlf"]
-[ext_resource type="AudioStream" uid="uid://x1ecyv01rbd5" path="res://sounds/music/loopfinalfinal.wav" id="15_ejd85"]
+[ext_resource type="AudioStream" uid="uid://dbsssgbk2r1w4" path="res://sounds/music/hope.wav" id="15_cl731"]
 [ext_resource type="PackedScene" uid="uid://cdlcwobseo370" path="res://static_objects/see_tree/see_tree.tscn" id="15_pdwmp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kivws"]
@@ -214,7 +214,7 @@ mix_target = 1
 
 [node name="LoopPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("15_ejd85")
+stream = ExtResource("15_cl731")
 volume_db = -3.0
 
 [node name="EnemiesStartSpawning" type="Timer" parent="."]
