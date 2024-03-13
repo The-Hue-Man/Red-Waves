@@ -20,5 +20,6 @@ unique_name_in_owner = true
 stream = ExtResource("3_nnjcc")
 volume_db = -40.0
 pitch_scale = 3.47
+bus = &"SoundEffects"
 
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

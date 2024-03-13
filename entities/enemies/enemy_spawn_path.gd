@@ -23,10 +23,10 @@ var enemy_stat_multiplier = 1.0
 
 var spawn_dict = {
 	"1" : {
-		"spawn_rate"  : 4,
+		"spawn_rate"  : 6,
 		"small_slimes" : 12,
 		"big_slimes" : 0,
-		"biggest_slimes" : 1,
+		"biggest_slimes" : 0,
 		"enemy_stat_multiplier" : 1.0
 	},
 	
@@ -48,46 +48,46 @@ var spawn_dict = {
 	
 	"4" : {
 		"spawn_rate"  : 1.5,
-		"small_slimes" : 3,
-		"big_slimes" : 2,
+		"small_slimes" : 5,
+		"big_slimes" : 1,
 		"biggest_slimes" : 0,
 		"enemy_stat_multiplier" : 1.6
 	},
 	
 	"5" : {
-		"spawn_rate"  : 1.5,
-		"small_slimes" : 7,
-		"big_slimes" : 1,
+		"spawn_rate"  : 1.9,
+		"small_slimes" : 2,
+		"big_slimes" : 3,
 		"biggest_slimes" : 0,
 		"enemy_stat_multiplier" : 1.8
 	},
 	
 	"6" : {
 		"spawn_rate"  : 1.4,
-		"small_slimes" : 1,
+		"small_slimes" : 2,
 		"big_slimes" : 4,
 		"biggest_slimes" : 0,
 		"enemy_stat_multiplier" : 2.0
 	},
 	
 	"7" : {
-		"spawn_rate"  : 1.4,
-		"small_slimes" : 3,
+		"spawn_rate"  : 1.8,
+		"small_slimes" : 4,
 		"big_slimes" : 4,
 		"biggest_slimes" : 0,
-		"enemy_stat_multiplier" : 2.0
+		"enemy_stat_multiplier" : 2.2
 	},
 	
 	"8" : {
-		"spawn_rate"  : 1.2,
-		"small_slimes" : 3,
+		"spawn_rate"  : 2.6,
+		"small_slimes" : 5,
 		"big_slimes" : 6,
 		"biggest_slimes" : 0,
 		"enemy_stat_multiplier" : 2.3
 	},
 	
 	"9" : {
-		"spawn_rate"  : 1.0,
+		"spawn_rate"  : 1.3,
 		"small_slimes" : 5,
 		"big_slimes" : 3,
 		"biggest_slimes" : 0,
@@ -95,7 +95,7 @@ var spawn_dict = {
 	},
 	
 	"10" : {
-		"spawn_rate"  : 1,
+		"spawn_rate"  : 1.4,
 		"small_slimes" : 6,
 		"big_slimes" : 3,
 		"biggest_slimes" : 0,
@@ -103,7 +103,7 @@ var spawn_dict = {
 	},
 	
 	"11" : {
-		"spawn_rate"  : .5,
+		"spawn_rate"  : .8,
 		"small_slimes" : 1,
 		"big_slimes" : 6,
 		"biggest_slimes" : 0,
@@ -119,19 +119,19 @@ var spawn_dict = {
 	},
 	
 	"13" : {
-		"spawn_rate"  : .8,
-		"small_slimes" : 4,
-		"big_slimes" : 5,
-		"biggest_slimes" : 0,
-		"enemy_stat_multiplier" : 3
+		"spawn_rate"  : 18,
+		"small_slimes" : 2,
+		"big_slimes" : 0,
+		"biggest_slimes" : 1,
+		"enemy_stat_multiplier" : 3.3
 	},
 	
 	"14" : {
-		"spawn_rate"  : .8,
-		"small_slimes" : 16,
+		"spawn_rate"  : 18,
+		"small_slimes" : 32,
 		"big_slimes" : 0,
-		"biggest_slimes" : 0,
-		"enemy_stat_multiplier" : 6
+		"biggest_slimes" : 2,
+		"enemy_stat_multiplier" : 6.5
 	},
 	
 	"15" : {
@@ -143,11 +143,11 @@ var spawn_dict = {
 	},
 	
 	"16" : {
-		"spawn_rate"  : .6,
-		"small_slimes" : 10,
-		"big_slimes" : 5,
-		"biggest_slimes" : 0,
-		"enemy_stat_multiplier" : 3.3
+		"spawn_rate"  : 8,
+		"small_slimes" : 12,
+		"big_slimes" : 10,
+		"biggest_slimes" : 1,
+		"enemy_stat_multiplier" : 3.5
 	},
 	"17" : {
 		"spawn_rate"  : .5,
@@ -158,42 +158,103 @@ var spawn_dict = {
 	},
 	
 	"18" : {
-		"spawn_rate"  : .2,
+		"spawn_rate"  : .4,
 		"small_slimes" : 4,
 		"big_slimes" : 6,
 		"biggest_slimes" : 0,
-		"enemy_stat_multiplier" : 3.2
+		"enemy_stat_multiplier" : 3.3
 	},
 	
 	"19" : {
-		"spawn_rate"  : .2,
-		"small_slimes" : 5,
+		"spawn_rate"  : 5,
+		"small_slimes" : 10,
 		"big_slimes" : 5,
 		"biggest_slimes" : 1,
 		"enemy_stat_multiplier" : 3.3
 	},
 	"20" : {
-		"spawn_rate"  : .2,
+		"spawn_rate"  : 4,
 		"small_slimes" : 6,
-		"big_slimes" : 5,
+		"big_slimes" : 8,
 		"biggest_slimes" : 1,
-		"enemy_stat_multiplier" : 3.5
+		"enemy_stat_multiplier" : 5
 	},
 	
 	"21" : {
 		"spawn_rate"  : .1,
-		"small_slimes" : 15,
+		"small_slimes" : 17,
 		"big_slimes" : 0,
 		"biggest_slimes" : 0,
-		"enemy_stat_multiplier" : 10
+		"enemy_stat_multiplier" : 11.1
 	},
 	
 	"22" : {
-		"spawn_rate"  : .1,
-		"small_slimes" : 1,
-		"big_slimes" : 1,
+		"spawn_rate"  : 2.4,
+		"small_slimes" : 2,
+		"big_slimes" : 2,
 		"biggest_slimes" : 1,
-		"enemy_stat_multiplier" : 6
+		"enemy_stat_multiplier" : 6.7
+	},
+	
+	"23" : {
+		"spawn_rate"  : 2,
+		"small_slimes" : 4,
+		"big_slimes" : 4,
+		"biggest_slimes" : 2,
+		"enemy_stat_multiplier" : 6.8
+	},
+	
+	"24" : {
+		"spawn_rate"  : 1.4,
+		"small_slimes" : 2,
+		"big_slimes" : 2,
+		"biggest_slimes" : 2,
+		"enemy_stat_multiplier" : 6.9
+	},
+	
+	"25" : {
+		"spawn_rate"  : .8,
+		"small_slimes" : 2,
+		"big_slimes" : 2,
+		"biggest_slimes" : 2,
+		"enemy_stat_multiplier" : 7.5
+	},
+	"26" : {
+		"spawn_rate"  : .7,
+		"small_slimes" : 2,
+		"big_slimes" : 2,
+		"biggest_slimes" : 2,
+		"enemy_stat_multiplier" : 7.7
+	},
+	"27" : {
+		"spawn_rate"  : .6,
+		"small_slimes" : 2,
+		"big_slimes" : 2,
+		"biggest_slimes" : 2,
+		"enemy_stat_multiplier" : 7.9
+	},
+	
+	"28" : {
+		"spawn_rate"  : .5,
+		"small_slimes" : 9,
+		"big_slimes" : 2,
+		"biggest_slimes" : 2,
+		"enemy_stat_multiplier" : 8
+	},
+	"29" : {
+		"spawn_rate"  : .2,
+		"small_slimes" : 16,
+		"big_slimes" : 12,
+		"biggest_slimes" : 0,
+		"enemy_stat_multiplier" : 9
+	},
+	
+	"30" : {
+		"spawn_rate"  : .3,
+		"small_slimes" : 9,
+		"big_slimes" : 0,
+		"biggest_slimes" : 3,
+		"enemy_stat_multiplier" : 10
 	},
 }
 
@@ -205,7 +266,7 @@ func _process(delta: float) -> void:
 	
 	time_since_game_start += delta
 	
-	if time_since_game_start > prev_spawn_time + 35:
+	if time_since_game_start > prev_spawn_time + 30:
 		prev_spawn_time = time_since_game_start
 		current_spawn_level += 1
 		print("GameState ", current_spawn_level, " has been reached")

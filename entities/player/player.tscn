@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://jw6wvouvwwfk"]
+[gd_scene load_steps=31 format=3 uid="uid://jw6wvouvwwfk"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_7x1ih"]
 [ext_resource type="Shader" path="res://entities/player/flash.gdshader" id="1_nt3yf"]
@@ -127,6 +127,17 @@ height = 4
 color_ramp = SubResource("Gradient_ywivd")
 noise = SubResource("FastNoiseLite_inuc1")
 
+[sub_resource type="Gradient" id="Gradient_yf46r"]
+colors = PackedColorArray(0.122721, 0.0284807, 0.00350308, 1, 0.187904, 0.121439, 0.0461605, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vcseg"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gjfe4"]
+width = 21
+height = 2
+color_ramp = SubResource("Gradient_yf46r")
+noise = SubResource("FastNoiseLite_vcseg")
+
 [sub_resource type="Gradient" id="Gradient_rick0"]
 offsets = PackedFloat32Array(0.21831, 1)
 colors = PackedColorArray(0.372549, 0.054902, 0.0745098, 1, 0.427451, 0.168627, 0.278431, 1)
@@ -194,12 +205,23 @@ libraries = {
 [node name="Hitsound" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("7_an5kh")
+bus = &"SoundEffects"
 
 [node name="PickupRange" type="Area2D" parent="."]
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupRange"]
 shape = SubResource("CircleShape2D_7ypjx")
+
+[node name="ExpBar" type="TextureProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -12.0
+offset_top = 7.0
+offset_right = 28.0
+offset_bottom = 47.0
+texture_under = SubResource("NoiseTexture2D_w36xk")
+texture_progress = SubResource("NoiseTexture2D_gjfe4")
+texture_progress_offset = Vector2(1, 1)
 
 [node name="HealthBar" type="TextureProgressBar" parent="."]
 unique_name_in_owner = true

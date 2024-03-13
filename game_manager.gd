@@ -63,4 +63,25 @@ func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
 			get_tree().quit()
-
+		else:
+			if event.is_action_pressed("decrease_volume"):
+				AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),AudioServer.get_bus_volume_db(1) - .32)
+				AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"),AudioServer.get_bus_volume_db(1) - .32)
+				AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SoundEffects"),AudioServer.get_bus_volume_db(1) - .32)
+			else:
+				if event.is_action_pressed("increase_volume"):
+					AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),AudioServer.get_bus_volume_db(1) + .32)
+					AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"),AudioServer.get_bus_volume_db(1) + .32)
+					AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SoundEffects"),AudioServer.get_bus_volume_db(1) + .32)
+				else:
+					if event.is_action_pressed("mute_music"):
+						if AudioServer.get_bus_volume_db(1) == -80.0:
+							AudioServer.set_bus_volume_db(1,0)
+						else:
+							AudioServer.set_bus_volume_db(1,-80.0)
+					else:
+						if event.is_action_pressed("mute_sound"):
+							if AudioServer.get_bus_volume_db(2) == -80.0:
+								AudioServer.set_bus_volume_db(2,0)
+							else:
+								AudioServer.set_bus_volume_db(2,-80.0)

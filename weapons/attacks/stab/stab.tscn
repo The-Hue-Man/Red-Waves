@@ -87,6 +87,7 @@ frame_progress = 0.599367
 unique_name_in_owner = true
 stream = ExtResource("3_vaknf")
 pitch_scale = 3.59
+bus = &"SoundEffects"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Duration" to="." method="_on_duration_timeout"]

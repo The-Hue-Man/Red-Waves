@@ -85,7 +85,7 @@ contact_damage = 2
 entity_name = "Slime"
 max_health = 8
 movement_speed = 44
-experience_contained = 180
+experience_contained = 240
 
 [node name="Shadow" type="Sprite2D" parent="."]
 position = Vector2(0, 3)

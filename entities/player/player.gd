@@ -7,6 +7,7 @@ extends Entity
 @onready var flash_animation = %"Flash animation"
 @onready var hit_sound = %Hitsound
 @onready var health_bar = %HealthBar
+@onready var exp_bar = %ExpBar
 
 
 var current_experience:int = 0
@@ -26,6 +27,8 @@ func _ready():
 	animated_sprite_2d.play("Idle")
 	health_bar.value = current_health
 	health_bar.max_value = max_health
+	exp_bar.value = current_experience
+	exp_bar.max_value = experience_needed(current_level)
 
 
 func _physics_process(_delta):
@@ -70,13 +73,19 @@ func check_health():
 
 
 func update_experience():
+
 	if get_experience() > experience_needed(current_level):
 		levelup()
+	
+	exp_bar.value = current_experience - experience_needed(current_level - 1)
+	exp_bar.max_value = experience_needed(current_level) - experience_needed(current_level - 1)
+	
 
 
 func add_experience(added_experience:int):
 	print("player gained ", added_experience, " experience")
 	current_experience += added_experience
+	
 	update_experience()
 
 func get_experience()-> int:
@@ -93,10 +102,10 @@ func levelup():
 	
 	GameManager.emit_signal("player_levelled_up")
 	
-	max_health += randi_range(3,6)
+	max_health += randi_range(4,7)
 	movement_speed += randi_range(0,2)
 	weapon_scale += randf_range(.1,.2)
-	damage_bonus += 2
+	damage_bonus += randi_range(2,3)
 	
 	
 	current_health = max_health

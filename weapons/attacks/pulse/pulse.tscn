@@ -129,6 +129,7 @@ libraries = {
 unique_name_in_owner = true
 stream = ExtResource("3_1xiip")
 pitch_scale = 3.59
+bus = &"SoundEffects"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

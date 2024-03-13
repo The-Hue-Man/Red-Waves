@@ -72,7 +72,7 @@ score = 5
 entity_name = "Big Slime"
 max_health = 58
 movement_speed = 38
-experience_contained = 500
+experience_contained = 630
 
 [node name="Shadow" type="Sprite2D" parent="."]
 position = Vector2(0, 1)

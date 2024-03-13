@@ -21,6 +21,14 @@ func _process(delta):
 		damage_timer.start()
 
 
+func target_player():
+	var target = GameManager.get_player_global_position()
+		
+	direction = global_position.direction_to(target)
+	
+
+
+
 func _physics_process(_delta):
 	
 	#target_player()
