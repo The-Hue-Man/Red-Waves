@@ -57,3 +57,10 @@ func get_player_global_position() -> Vector2:
 		
 	return player_coordinates
 
+
+
+func _unhandled_input(event):
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_ESCAPE:
+			get_tree().quit()
+

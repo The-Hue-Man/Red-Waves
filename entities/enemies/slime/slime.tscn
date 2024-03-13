@@ -83,8 +83,8 @@ script = ExtResource("1_dk53i")
 enemy_sprite = NodePath("AnimatedSprite2D")
 entity_name = "Slime"
 max_health = 8
-movement_speed = 35
-experience_contained = 2725
+movement_speed = 44
+experience_contained = 180
 
 [node name="Shadow" type="Sprite2D" parent="."]
 position = Vector2(0, 3)

@@ -22,42 +22,42 @@ var enemy_stat_multiplier = 1.0
 
 var spawn_dict = {
 	"1" : {
-		"spawn_rate"  : 1.5,
-		"small_slimes" : 3,
+		"spawn_rate"  : 2.2,
+		"small_slimes" : 8,
 		"big_slimes" : 0,
 		"enemy_stat_multiplier" : 1.0
 	},
 	
 	"2" : {
 		"spawn_rate"  : 1.5,
-		"small_slimes" : 2,
-		"big_slimes" : 1,
-		"enemy_stat_multiplier" : 1.0
+		"small_slimes" : 3,
+		"big_slimes" : 0,
+		"enemy_stat_multiplier" : 1.2
 	},
 	
 	"3" : {
-		"spawn_rate"  : 1.6,
+		"spawn_rate"  : 1.5,
 		"small_slimes" : 3,
 		"big_slimes" : 1,
-		"enemy_stat_multiplier" : 1.1
+		"enemy_stat_multiplier" : 1.4
 	},
 	
 	"4" : {
-		"spawn_rate"  : 1.6,
+		"spawn_rate"  : 1.5,
 		"small_slimes" : 3,
 		"big_slimes" : 2,
-		"enemy_stat_multiplier" : 1.3
+		"enemy_stat_multiplier" : 1.6
 	},
 	
 	"5" : {
-		"spawn_rate"  : 1.6,
+		"spawn_rate"  : 1.5,
 		"small_slimes" : 7,
 		"big_slimes" : 1,
 		"enemy_stat_multiplier" : 1.8
 	},
 	
 	"6" : {
-		"spawn_rate"  : 1.5,
+		"spawn_rate"  : 1.4,
 		"small_slimes" : 1,
 		"big_slimes" : 4,
 		"enemy_stat_multiplier" : 2.0
@@ -100,23 +100,63 @@ var spawn_dict = {
 	
 	"12" : {
 		"spawn_rate"  : .4,
-		"small_slimes" : 9,
+		"small_slimes" : 11,
 		"big_slimes" : 0,
 		"enemy_stat_multiplier" : 2.8
 	},
 	
 	"13" : {
-		"spawn_rate"  : .2,
+		"spawn_rate"  : .4,
 		"small_slimes" : 4,
 		"big_slimes" : 5,
 		"enemy_stat_multiplier" : 2.9
 	},
 	
 	"14" : {
-		"spawn_rate"  : .1,
+		"spawn_rate"  : .3,
 		"small_slimes" : 5,
 		"big_slimes" : 5,
 		"enemy_stat_multiplier" : 3.0
+	},
+	
+	"15" : {
+		"spawn_rate"  : .3,
+		"small_slimes" : 7,
+		"big_slimes" : 5,
+		"enemy_stat_multiplier" : 3.0
+	},
+	
+	"16" : {
+		"spawn_rate"  : .3,
+		"small_slimes" : 10,
+		"big_slimes" : 5,
+		"enemy_stat_multiplier" : 3.1
+	},
+	"17" : {
+		"spawn_rate"  : .2,
+		"small_slimes" : 1,
+		"big_slimes" : 6,
+		"enemy_stat_multiplier" : 3.2
+	},
+	
+	"18" : {
+		"spawn_rate"  : .2,
+		"small_slimes" : 4,
+		"big_slimes" : 6,
+		"enemy_stat_multiplier" : 3.2
+	},
+	
+	"19" : {
+		"spawn_rate"  : .1,
+		"small_slimes" : 5,
+		"big_slimes" : 5,
+		"enemy_stat_multiplier" : 3.3
+	},
+	"20" : {
+		"spawn_rate"  : .1,
+		"small_slimes" : 6,
+		"big_slimes" : 5,
+		"enemy_stat_multiplier" : 3.5
 	},
 }
 

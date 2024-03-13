@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://jw6wvouvwwfk"]
+[gd_scene load_steps=28 format=3 uid="uid://jw6wvouvwwfk"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_7x1ih"]
 [ext_resource type="Shader" path="res://entities/player/flash.gdshader" id="1_nt3yf"]
@@ -115,13 +115,37 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ypjx"]
 radius = 14.0
 
+[sub_resource type="Gradient" id="Gradient_ywivd"]
+offsets = PackedFloat32Array(0, 0.380282, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.051971, 0.051971, 0.0519709, 1, 0.0430392, 0.0430392, 0.0430392, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_inuc1"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_w36xk"]
+width = 23
+height = 4
+color_ramp = SubResource("Gradient_ywivd")
+noise = SubResource("FastNoiseLite_inuc1")
+
+[sub_resource type="Gradient" id="Gradient_rick0"]
+offsets = PackedFloat32Array(0.21831, 1)
+colors = PackedColorArray(0.372549, 0.054902, 0.0745098, 1, 0.427451, 0.168627, 0.278431, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hwlgy"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_orv4u"]
+width = 21
+height = 2
+color_ramp = SubResource("Gradient_rick0")
+noise = SubResource("FastNoiseLite_hwlgy")
+
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("weapon_origin") groups=["PlayerGroup"]]
 material = SubResource("ShaderMaterial_tray3")
 collision_mask = 7
 collision_priority = 6.03
 script = ExtResource("1_7x1ih")
 entity_name = "Player"
-max_health = 5
+max_health = 4
 health_regeneration = 1
 movement_speed = 100
 weapon_origin = NodePath("AttackPoint")
@@ -176,3 +200,13 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupRange"]
 shape = SubResource("CircleShape2D_7ypjx")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -12.0
+offset_top = 5.0
+offset_right = 28.0
+offset_bottom = 45.0
+texture_under = SubResource("NoiseTexture2D_w36xk")
+texture_progress = SubResource("NoiseTexture2D_orv4u")
+texture_progress_offset = Vector2(1, 1)

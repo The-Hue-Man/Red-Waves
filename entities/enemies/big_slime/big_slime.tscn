@@ -68,10 +68,10 @@ safe_margin = 1.0
 script = ExtResource("1_n1gr2")
 enemy_sprite = NodePath("AnimatedSprite2D")
 contact_damage = 6
-score = 4
+score = 5
 entity_name = "Big Slime"
-max_health = 49
-movement_speed = 40
+max_health = 58
+movement_speed = 38
 experience_contained = 500
 
 [node name="Shadow" type="Sprite2D" parent="."]

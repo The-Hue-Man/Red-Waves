@@ -6,6 +6,7 @@ extends Entity
 @onready var animated_sprite_2d = %AnimatedSprite2D
 @onready var flash_animation = %"Flash animation"
 @onready var hit_sound = %Hitsound
+@onready var health_bar = %HealthBar
 
 
 var current_experience:int = 0
@@ -23,6 +24,8 @@ func _ready():
 	
 	faction = "player"
 	animated_sprite_2d.play("Idle")
+	health_bar.value = current_health
+	health_bar.max_value = max_health
 
 
 func _physics_process(_delta):
@@ -90,16 +93,16 @@ func levelup():
 	
 	GameManager.emit_signal("player_levelled_up")
 	
-	max_health += randi_range(5,10)
-	movement_speed += randi_range(0,5)
-	weapon_scale += randf_range(.1,.3)
-	damage_bonus += randi_range(1,3)
-	
+	max_health += randi_range(3,6)
+	movement_speed += randi_range(0,4)
+	weapon_scale += randf_range(.1,.2)
+	damage_bonus += randi_range(1,2)
 	
 	
 	current_health = max_health
 	
-	
+	health_bar.max_value = max_health
+	health_bar.value = current_health
 
 
 func take_damage(damage: int):
@@ -109,6 +112,8 @@ func take_damage(damage: int):
 	hit_sound.pitch_scale = randf_range(.2,3)
 	hit_sound.volume_db = randf_range(-7,7)
 	hit_sound.play()
+	
+	health_bar.value = current_health
 
 
 func get_level()-> int:
