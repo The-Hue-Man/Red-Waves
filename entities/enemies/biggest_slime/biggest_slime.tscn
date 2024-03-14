@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dyxkr3hnc8e0y"]
+[gd_scene load_steps=15 format=3 uid="uid://dyxkr3hnc8e0y"]
 
 [ext_resource type="Script" path="res://entities/enemies/biggest_slime/biggest_slime.gd" id="1_lhyo2"]
+[ext_resource type="Texture2D" uid="uid://dht4p6ghudsrx" path="res://entities/corpse/biggest_slime_chunk.png" id="2_0akc1"]
 [ext_resource type="Texture2D" uid="uid://cummrm2rsacjw" path="res://entities/shared/shadow.png" id="2_qjwsg"]
 [ext_resource type="Texture2D" uid="uid://dsmyhr1m3buk3" path="res://entities/enemies/biggest_slime/biggest_slimev3.png" id="3_pqwnr"]
 
@@ -79,6 +80,7 @@ entity_name = "BigBoi"
 max_health = 470
 movement_speed = 35
 faction = "enemy"
+corpse_sprite = ExtResource("2_0akc1")
 experience_contained = 10000
 
 [node name="Shadow" type="Sprite2D" parent="."]
@@ -102,7 +104,7 @@ scale = Vector2(1.66157, 2.04491)
 shape = SubResource("RectangleShape2D_lh8wm")
 
 [node name="Damage_box" type="Area2D" parent="."]
-collision_mask = 3
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damage_box"]
 position = Vector2(1.59162e-12, -10)

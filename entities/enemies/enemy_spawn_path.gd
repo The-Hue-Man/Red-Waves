@@ -150,7 +150,7 @@ var spawn_dict = {
 		"enemy_stat_multiplier" : 3.5
 	},
 	"17" : {
-		"spawn_rate"  : .5,
+		"spawn_rate"  : .9,
 		"small_slimes" : 1,
 		"big_slimes" : 6,
 		"biggest_slimes" : 0,
@@ -158,7 +158,7 @@ var spawn_dict = {
 	},
 	
 	"18" : {
-		"spawn_rate"  : .4,
+		"spawn_rate"  : .7,
 		"small_slimes" : 4,
 		"big_slimes" : 6,
 		"biggest_slimes" : 0,

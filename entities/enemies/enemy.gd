@@ -15,7 +15,6 @@ func _ready():
 	#Calls the Entity class Ready function
 	super._ready()
 	
-	enemy_sprite.flip_h = randi_range(0,1)
 	faction = "enemy"
 	add_to_group("enemy")
 	
@@ -44,8 +43,10 @@ func target_player():
 	
 	if target.x > position.x:
 		enemy_sprite.flip_h = true
+		is_flipped = true
 	else:
 		enemy_sprite.flip_h = false
+		is_flipped = false
 
 
 func check_health():

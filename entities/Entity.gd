@@ -18,12 +18,13 @@ const CORPSE = preload("res://entities/corpse/corpse.tscn")
 
 @export_category("Other")
 @export var faction:String
-@export var corpse_sprite:Sprite2D
+@export var corpse_sprite: Texture2D
 @export var experience_contained:int = 0
 
 @export_category("Weapons")
 @export var weapon_origin:Marker2D
 
+var is_flipped = false
 
 
 func _ready():
@@ -43,7 +44,7 @@ func check_health() -> bool:
 	if current_health <= 0 && invulnerable == false:
 		print(entity_name, " has died")
 		
-		call_deferred("spawn_corpse")
+		call_deferred("spawn_corpse",corpse_sprite)
 		
 		queue_free()
 		return false
@@ -51,12 +52,15 @@ func check_health() -> bool:
 	return true
 
 
-func spawn_corpse():
+func spawn_corpse(corpse_sprite):
 	var new_corpse = CORPSE.instantiate()
-	new_corpse.initialize_variables(experience_contained)
+	
 	
 	new_corpse.position = position
+	new_corpse.is_flipped = is_flipped
+	
 	get_parent().add_child(new_corpse)
+	new_corpse.initialize_variables(experience_contained,corpse_sprite)
 
 
 

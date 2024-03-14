@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bksw3rfrgifsc"]
+[gd_scene load_steps=14 format=3 uid="uid://bksw3rfrgifsc"]
 
 [ext_resource type="Script" path="res://entities/enemies/big_slime/big_slime.gd" id="1_n1gr2"]
 [ext_resource type="Texture2D" uid="uid://cummrm2rsacjw" path="res://entities/shared/shadow.png" id="2_3mtd0"]
+[ext_resource type="Texture2D" uid="uid://dytg1kxbsklxe" path="res://entities/corpse/big_slime_chunk.png" id="2_71f2m"]
 [ext_resource type="Texture2D" uid="uid://cj40qmoi76lcj" path="res://entities/enemies/big_slime/big_slimev2.png" id="2_prpcd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1owr"]
@@ -72,6 +73,7 @@ score = 5
 entity_name = "Big Slime"
 max_health = 58
 movement_speed = 38
+corpse_sprite = ExtResource("2_71f2m")
 experience_contained = 630
 
 [node name="Shadow" type="Sprite2D" parent="."]

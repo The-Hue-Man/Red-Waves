@@ -1,9 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://jw6wvouvwwfk"]
+[gd_scene load_steps=32 format=3 uid="uid://jw6wvouvwwfk"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_7x1ih"]
 [ext_resource type="Shader" path="res://entities/player/flash.gdshader" id="1_nt3yf"]
 [ext_resource type="Texture2D" uid="uid://cummrm2rsacjw" path="res://entities/shared/shadow.png" id="2_5wmt6"]
 [ext_resource type="Texture2D" uid="uid://br4j6hhtmx8o1" path="res://entities/player/abbcharanim.png" id="2_bejfm"]
+[ext_resource type="Texture2D" uid="uid://b7n67ilaycosu" path="res://entities/corpse/chunk.png" id="3_wf8ud"]
 [ext_resource type="PackedScene" uid="uid://bpxnrw6kf17pd" path="res://weapons/knife/knife.tscn" id="4_c2iee"]
 [ext_resource type="PackedScene" uid="uid://0c7wvly2w048" path="res://weapons/pulser/pulser.tscn" id="5_ioev0"]
 [ext_resource type="AudioStream" uid="uid://c30x2kr6yf588" path="res://sounds/Ow.wav" id="7_an5kh"]
@@ -159,6 +160,7 @@ entity_name = "Player"
 max_health = 4
 health_regeneration = 1
 movement_speed = 100
+corpse_sprite = ExtResource("3_wf8ud")
 weapon_origin = NodePath("AttackPoint")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -19,6 +19,16 @@ func _process(delta):
 	if touching_player && damage_timer.is_stopped():
 		GameManager.player.take_damage(contact_damage)
 		damage_timer.start()
+	
+	
+	for a in $Damage_box.get_overlapping_areas():
+		if a.is_in_group("corpse"):
+			experience_contained += a.experience_contained
+			current_health += 1
+			a.queue_free()
+	
+	
+
 
 
 func target_player():
