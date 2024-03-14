@@ -24,7 +24,7 @@ var enemy_stat_multiplier = 1.0
 var spawn_dict = {
 	"1" : {
 		"spawn_rate"  : 6,
-		"small_slimes" : 12,
+		"small_slimes" : 15,
 		"big_slimes" : 0,
 		"biggest_slimes" : 0,
 		"enemy_stat_multiplier" : 1.0
@@ -32,7 +32,7 @@ var spawn_dict = {
 	
 	"2" : {
 		"spawn_rate"  : 1.5,
-		"small_slimes" : 3,
+		"small_slimes" : 4,
 		"big_slimes" : 0,
 		"biggest_slimes" : 0,
 		"enemy_stat_multiplier" : 1.2
@@ -48,7 +48,7 @@ var spawn_dict = {
 	
 	"4" : {
 		"spawn_rate"  : 1.5,
-		"small_slimes" : 5,
+		"small_slimes" : 6,
 		"big_slimes" : 1,
 		"biggest_slimes" : 0,
 		"enemy_stat_multiplier" : 1.6
@@ -56,7 +56,7 @@ var spawn_dict = {
 	
 	"5" : {
 		"spawn_rate"  : 1.9,
-		"small_slimes" : 2,
+		"small_slimes" : 3,
 		"big_slimes" : 3,
 		"biggest_slimes" : 0,
 		"enemy_stat_multiplier" : 1.8
@@ -64,7 +64,7 @@ var spawn_dict = {
 	
 	"6" : {
 		"spawn_rate"  : 1.4,
-		"small_slimes" : 2,
+		"small_slimes" : 3,
 		"big_slimes" : 4,
 		"biggest_slimes" : 0,
 		"enemy_stat_multiplier" : 2.0
@@ -72,7 +72,7 @@ var spawn_dict = {
 	
 	"7" : {
 		"spawn_rate"  : 1.8,
-		"small_slimes" : 4,
+		"small_slimes" : 5,
 		"big_slimes" : 4,
 		"biggest_slimes" : 0,
 		"enemy_stat_multiplier" : 2.2
@@ -88,7 +88,7 @@ var spawn_dict = {
 	
 	"9" : {
 		"spawn_rate"  : 1.3,
-		"small_slimes" : 5,
+		"small_slimes" : 6,
 		"big_slimes" : 3,
 		"biggest_slimes" : 0,
 		"enemy_stat_multiplier" : 2.5
@@ -104,7 +104,7 @@ var spawn_dict = {
 	
 	"11" : {
 		"spawn_rate"  : .8,
-		"small_slimes" : 1,
+		"small_slimes" : 2,
 		"big_slimes" : 6,
 		"biggest_slimes" : 0,
 		"enemy_stat_multiplier" : 2.7
@@ -112,7 +112,7 @@ var spawn_dict = {
 	
 	"12" : {
 		"spawn_rate"  : .4,
-		"small_slimes" : 12,
+		"small_slimes" : 13,
 		"big_slimes" : 0,
 		"biggest_slimes" : 0,
 		"enemy_stat_multiplier" : 2.8
@@ -174,7 +174,7 @@ var spawn_dict = {
 	},
 	"20" : {
 		"spawn_rate"  : 4,
-		"small_slimes" : 6,
+		"small_slimes" : 16,
 		"big_slimes" : 8,
 		"biggest_slimes" : 1,
 		"enemy_stat_multiplier" : 5
@@ -198,7 +198,7 @@ var spawn_dict = {
 	
 	"23" : {
 		"spawn_rate"  : 2,
-		"small_slimes" : 4,
+		"small_slimes" : 14,
 		"big_slimes" : 4,
 		"biggest_slimes" : 2,
 		"enemy_stat_multiplier" : 6.8
@@ -206,7 +206,7 @@ var spawn_dict = {
 	
 	"24" : {
 		"spawn_rate"  : 1.4,
-		"small_slimes" : 2,
+		"small_slimes" : 24,
 		"big_slimes" : 2,
 		"biggest_slimes" : 2,
 		"enemy_stat_multiplier" : 6.9
@@ -214,14 +214,14 @@ var spawn_dict = {
 	
 	"25" : {
 		"spawn_rate"  : .8,
-		"small_slimes" : 2,
+		"small_slimes" : 7,
 		"big_slimes" : 2,
 		"biggest_slimes" : 2,
 		"enemy_stat_multiplier" : 7.5
 	},
 	"26" : {
 		"spawn_rate"  : .7,
-		"small_slimes" : 2,
+		"small_slimes" : 7,
 		"big_slimes" : 2,
 		"biggest_slimes" : 2,
 		"enemy_stat_multiplier" : 7.7

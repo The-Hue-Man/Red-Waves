@@ -13,7 +13,7 @@ func _ready():
 func _on_enemy_death(death_position):
 	
 	enemy_death_sounds.global_position = death_position
-	enemy_death_sounds.pitch_scale = randf_range(.9,4)
+	enemy_death_sounds.pitch_scale = randf_range(1.6,3.9)
 	enemy_death_sounds.volume_db = randf_range(-1,6)
 	enemy_death_sounds.play()
 

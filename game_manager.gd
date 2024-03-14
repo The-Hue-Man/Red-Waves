@@ -76,7 +76,7 @@ func _unhandled_input(event):
 				else:
 					if event.is_action_pressed("mute_music"):
 						if AudioServer.get_bus_volume_db(1) == -80.0:
-							AudioServer.set_bus_volume_db(1,0)
+							AudioServer.set_bus_volume_db(1,-5.5)
 						else:
 							AudioServer.set_bus_volume_db(1,-80.0)
 					else:
