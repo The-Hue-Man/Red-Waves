@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://hbgtattk8upt"]
+[gd_scene load_steps=18 format=3 uid="uid://hbgtattk8upt"]
 
 [ext_resource type="PackedScene" uid="uid://cpmcxta1lrmst" path="res://tilesets/tile_map.tscn" id="1_addwt"]
 [ext_resource type="PackedScene" uid="uid://jw6wvouvwwfk" path="res://entities/player/player.tscn" id="1_ci8gl"]
@@ -13,8 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://ejlfi1ow2ugj" path="res://ui/end_screen.tscn" id="8_ycpgi"]
 [ext_resource type="AudioStream" uid="uid://brtdy2cqfqg3i" path="res://sounds/death.wav" id="12_5575v"]
 [ext_resource type="AudioStream" uid="uid://b7yajxtctnbr7" path="res://sounds/music/offtrack_intro.wav" id="13_r7xlf"]
-[ext_resource type="AudioStream" uid="uid://2ct7n2wdl75e" path="res://sounds/music/DONE.wav" id="15_dcbv4"]
+[ext_resource type="AudioStream" uid="uid://olq66lltbmgy" path="res://sounds/music/after.wav" id="15_4vb7x"]
 [ext_resource type="PackedScene" uid="uid://cdlcwobseo370" path="res://static_objects/see_tree/see_tree.tscn" id="15_pdwmp"]
+[ext_resource type="AudioStream" uid="uid://2ct7n2wdl75e" path="res://sounds/music/DONE.wav" id="15_q1k1g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kivws"]
 resource_local_to_scene = true
@@ -215,9 +216,15 @@ autoplay = true
 mix_target = 1
 bus = &"Music"
 
-[node name="LoopPlayer" type="AudioStreamPlayer" parent="."]
+[node name="done" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("15_dcbv4")
+stream = ExtResource("15_q1k1g")
+volume_db = -5.5
+bus = &"Music"
+
+[node name="after" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("15_4vb7x")
 volume_db = -5.5
 bus = &"Music"
 
@@ -227,4 +234,6 @@ one_shot = true
 autostart = true
 
 [connection signal="finished" from="IntroPlayer" to="." method="_on_intro_player_finished"]
+[connection signal="finished" from="done" to="." method="_on_done_finished"]
+[connection signal="finished" from="after" to="." method="_on_after_finished"]
 [connection signal="timeout" from="EnemiesStartSpawning" to="." method="_on_enemies_start_spawning_timeout"]

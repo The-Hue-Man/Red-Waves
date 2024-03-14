@@ -87,7 +87,7 @@ entity_name = "Slime"
 max_health = 8
 movement_speed = 44
 corpse_sprite = ExtResource("2_01erb")
-experience_contained = 200
+experience_contained = 220
 
 [node name="Shadow" type="Sprite2D" parent="."]
 position = Vector2(0, 3)

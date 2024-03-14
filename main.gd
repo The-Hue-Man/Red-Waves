@@ -1,7 +1,9 @@
 extends Node2D
 
 @onready var enemy_death_sounds = %EnemyDeathSounds
-@onready var loop_player = %LoopPlayer
+@onready var done = %done
+@onready var after = %after
+
 @onready var enemy_spawn_path = %EnemySpawnPath
 
 
@@ -21,8 +23,16 @@ func _on_enemy_death(death_position):
 
 
 func _on_intro_player_finished():
-	loop_player.play()
+	done.play()
 
 
 func _on_enemies_start_spawning_timeout():
 	enemy_spawn_path.ready_to_spawn_enemies = true
+
+
+func _on_done_finished():
+	after.play()
+
+
+func _on_after_finished():
+	done.play()
